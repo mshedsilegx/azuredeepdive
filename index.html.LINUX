@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<title>Azure DeepDive :: Landing Page</title>
+<link href="/css/main.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+<link href="/css/cms.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+<base href="http://xg-vm-001-ol7.centralus.cloudapp.azure.com">
+</head>
+<body text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" style="margin-top:0; margin-left:0; margin-right:0;">
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="usoHeader">
+      <a href="/"><img src="/images/logo_left.png" alt="Azure DeepDive :: Landing Page Portal" border="0" /></a>
+    </td>
+    <td class="usoHeader">
+      <a href="/"><img src="/images/logo_right.png" alt="Azure DeepDive :: Share" border="0" /></a>
+    </td>
+  </tr>
+</table>
+<table class="usoBorderLine"><tr colspan="2"><td></td></tr></table><p>
+
+<p align="center" style="text-align:center">
+<span class="usoBody">Welcome to the <span class="usoBodyHL">Azure DeepDive Landing Page</span> Portal.<br>
+Please find below the following resources <span class="prtlBodyCR">(Hello World !!)</span>:</span>
+</p><br>
+
+<div align="center">
+<table class="usoTable" cellspacing="0" cellpadding="10" width="650">
+ <tr>
+  <td width="100%" valign="top" align="center">
+    <span class="usoTitle">OL7-64 Apache 2.4.6</span>
+    <ul>
+    <li class="usoContent"><a class="usoContent" href="http://xg-vm-001-ol7.centralus.cloudapp.azure.com">URL</a> of MainPage (/var/www/html/index.html)........................</li>
+    <li class="usoContent">Server Name: xg-vm-001-ol7.centralus.cloudapp.azure.com.....</li>
+    <li class="usoContent">External IP: 52.173.147.253.................................................</li>
+    <li class="usoContent">Inbound ports: 22, 80, 443..................................................</li>
+    </ul>
+  </td>
+ </tr>
+ <tr>
+  <td width="100%" valign="top" align="center" bgcolor="#E0E0E0" colspan="2">
+  <span class="usoContent">
+    Azure DeepDive Linux VM POC.
+  </span>
+  </td>
+ </tr>
+</table>
+</div>
+
+<p>&nbsp;</p>
+<p align="center">
+  <a href="/"><img src="/images/team.jpg" border="0" title="Azure DeepDive Landing Page Portal" alt="Azure DeepDive Landing Page Portal"></a>
+</p>
+
+</body>
+</html>

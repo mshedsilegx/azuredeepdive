@@ -1,0 +1,28 @@
+div.debug {text-align:center; font-family:verdana, serif; font-size:10px; color:#004080}
+a.debug, a.debug:visited {text-align:center; font-family:verdana, serif; font-size:10px; font-weight: normal; text-decoration: none; color:#0050C0}
+a.debug:hover {text-align:center; font-family:verdana, serif; font-size:10px; text-decoration:underline; color:#0080C0}
+
+.alertBox {
+  font-family: Tahoma, verdana, arial, helvetica; font-size: 12px; color: #DA0000;
+  font-weight: bold;
+  border: 1px solid #EA9010;
+  background-color: #FFCC99;
+  margin: 5px;
+  padding: 5px;
+}
+.msgBox {
+  font-family: Tahoma, verdana, arial, helvetica; font-size: 11px; color: #EA5010;
+  border: 1px solid #EA9010;
+  background-color: #FFCC99;
+  margin: 5px;
+  padding: 5px;
+}
+a.msgBoxLink, a.msgBoxLink:visited { color:#B70000 }
+a.msgBoxLink:hover { text-decoration:underline; color:#DA0000 }
+
+.warnMsg {
+  font-family: Tahoma, verdana, arial, helvetica; font-size: 11px; color: #EA5010;
+  background: #e6e6e6;
+}
+
+li {margin-bottom:3px}
