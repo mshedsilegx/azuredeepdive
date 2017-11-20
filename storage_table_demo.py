@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2.7
 # Custom version 20171120
 
 import string,random,time,azurerm,json
@@ -79,8 +79,7 @@ car.year = 1999
 car.color = 'blue'
 car.price = 20000
 table_service.insert_entity('itemstable', car)
-print('Created entry for Citroen AX...\n')
-time.sleep(1)
+print('Created entry for Citroen AX...')
 
 car = Entity()
 car.PartitionKey = 'cardealership'
@@ -91,8 +90,7 @@ car.year = 1997
 car.color = 'white'
 car.price = 15000
 table_service.insert_entity('itemstable', car)
-print('Created entry for Renault R5...\n')
-time.sleep(1)
+print('Created entry for Renault R5...')
 
 car = Entity()
 car.PartitionKey = 'cardealership'
@@ -118,8 +116,7 @@ coffee.flavor = 'Expresso'
 coffee.sizecup = 6
 coffee.pricecup = 10
 table_service.insert_entity('itemstable', coffee)
-print('Created entry for Lavazza Expresso...\n')
-time.sleep(1)
+print('Created entry for Lavazza Expresso...')
 
 coffee = Entity()
 coffee.PartitionKey = 'coffeeshop'
