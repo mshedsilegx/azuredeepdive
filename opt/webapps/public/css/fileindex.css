@@ -1,0 +1,78 @@
+body {margin:0}
+a, a:visited {text-decoration:none; color:#000040}
+a:hover {text-decoration:underline; color:#0080C0}
+img {border:0}
+/* detailed view */
+table {width:100%; border:0; padding:0; margin:0; empty-cells:show}
+th {text-align:left; font-weight:bold; background-color: buttonface; cursor:default;
+	border-width:1px; border-style: solid; border-color: buttonhighlight buttonshadow buttonshadow buttonhighlight;
+}
+th img {vertical-align:middle}
+th, td {font-family:verdana, serif; font-size:11px; margin:0; padding:3px; color:#004080}
+td {  border-style: none none solid; border-bottom: 1px solid #EEEEEE; }
+tr.tc {background-color:#fff; color:#000040}
+tr.tc2 {background-color:#eee; color:#000040}
+/* tiled view */
+table.tiled {float:left; width:33.3%}
+table.tiled:hover {background-color:buttonface}
+table.tiled td.icon {width:32px}
+span.small {font-family:verdana, serif; font-size:9px; color:#004080}
+/* thumbnail view */
+table.thumb {float:left; width:120px; height:120px; margin:8px}
+table.thumb td {white-space:nowrap; text-align:center}
+table.thumb td.icon {border:2px solid buttonface; width:120px; height:120px}
+table.thumb td.icon:hover {border:2px solid #9999dd}
+table.thumb td.icon img {vertical-align:middle}
+img.thumbnail {max-width:100px; max-height:100px;
+	width:expression(this.width > 100 ? 100 : true);
+	height:expression(this.height > 100 ? 100 : true);
+}
+/* tree view */
+ul {list-style-type:none; font-family:verdana, serif; font-size:11px; padding-left:18px; _padding-left:0}
+li {padding-bottom:2px}
+li img {vertical-align:middle}
+li.p {list-style-image:url('/images/dir_collapse.gif')}
+li.c {list-style-image:url('/images/dir_expand.gif')}
+li.i {display:inline}
+/* footer */
+table.footer { clear:both;
+	border-width:1px; border-style: solid; border-color: buttonshadow buttonhighlight buttonhighlight buttonshadow;
+}
+table.footer th {font-weight:normal; text-align:center}
+table.footer th a img {vertical-align:middle}
+/* debug */
+div.debug {text-align:center; font-family:verdana, serif; font-size:10px; color:#004080}
+a.debug, a.debug:visited {text-decoration: none; color:#004080}
+a.debug:hover {text-decoration:underline; color:#0080C0}
+
+a.main, a.main:visited {text-decoration: none; color:#000040}
+a.main:hover {text-decoration:underline; color:#0080C0}
+
+select {
+  background-color: #E0E0E0;
+  color: #004080;
+  font-family:verdana, serif; font-size:10px;
+}
+input {
+  background-color: #E0E0E0;
+  color: #004080;
+  font-family:verdana, serif; font-size:10px;
+}
+
+form {
+  border: 1px solid #D0D0D0;
+  padding: 0px;
+  border-collapse: collapse;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+pre {
+ overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ /* width: 99%; */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+}

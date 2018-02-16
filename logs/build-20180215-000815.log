@@ -1,0 +1,21 @@
+===== A- Reset all docker environment ==========
+[A1] Stop/Delete all Docker containers. Must be run first because images are attached to containers
+[A2] Delete all Docker images
+===== B- Pulling Oracle Linux 7.4 latest image ==========
+Pull (1 of 1): oraclelinux:7@sha256:b7918c900f5a73a88d57374eff7f2032599831873e898c0e7c08d955de4fd09e
+sha256:b7918c900f5a73a88d57374eff7f2032599831873e898c0e7c08d955de4fd09e: Pulling from library/oraclelinux
+e933df965637: Pulling fs layer
+e933df965637: Verifying Checksum
+e933df965637: Download complete
+e933df965637: Pull complete
+Digest: sha256:b7918c900f5a73a88d57374eff7f2032599831873e898c0e7c08d955de4fd09e
+Status: Downloaded newer image for oraclelinux@sha256:b7918c900f5a73a88d57374eff7f2032599831873e898c0e7c08d955de4fd09e
+Tagging oraclelinux@sha256:b7918c900f5a73a88d57374eff7f2032599831873e898c0e7c08d955de4fd09e as oraclelinux:7
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+oraclelinux         7                   24b904743e27        2 weeks ago         229MB
+===== C- Generating custom nginx/PHP/memcached image and creating derived container ==========
+===== D- Validating container ==========
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+msh_nginx-phpfpm    latest              d5090fdae2e3        2 seconds ago       1.99GB
+CONTAINER ID        IMAGE               COMMAND                  CREATED                  STATUS              PORTS               NAMES
+2a5c8229932f        msh_nginx-phpfpm    "/bin/sh -c /opt/s..."   Less than a second ago   Created                                 msh_nginx-phpfpm_1

@@ -1,0 +1,1717 @@
+Step 1/22 : FROM oraclelinux:7
+ ---> 24b904743e27
+Step 2/22 : MAINTAINER MSH Azure Deepdive <azure.deepdive@mckesson.com>
+ ---> Running in ce808ca5dc65
+ ---> 56c54b387c14
+Removing intermediate container ce808ca5dc65
+Step 3/22 : RUN echo "----- [C1]- Upgrading all OS packages from xgforge repository -----"
+ ---> Running in 6f4643f5a202
+----- [C1]- Upgrading all OS packages from xgforge repository -----
+ ---> 025e12a0606d
+Removing intermediate container 6f4643f5a202
+Step 4/22 : COPY xgforge-local.repo /etc/yum.repos.d/
+ ---> e669eebd3274
+Step 5/22 : RUN yum update -y && rm -f /var/lib/rpm/__db.00?
+ ---> Running in f587a745d2db
+Loaded plugins: ovl, ulninfo
+Resolving Dependencies
+--> Running transaction check
+---> Package GeoIP.x86_64 0:1.5.0-11.el7 will be obsoleted
+---> Package acl.x86_64 0:2.2.51-12.el7 will be updated
+---> Package acl.x86_64 0:2.2.52-10.el7.xg will be an update
+---> Package bind-libs-lite.x86_64 32:9.9.4-51.el7_4.2 will be updated
+---> Package bind-libs-lite.x86_64 50:9.11.2-51.P1.el7.xg will be an update
+--> Processing Dependency: libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) for package: 50:bind-libs-lite-9.11.2-51.P1.el7.xg.x86_64
+--> Processing Dependency: libjson-c.so.3()(64bit) for package: 50:bind-libs-lite-9.11.2-51.P1.el7.xg.x86_64
+--> Processing Dependency: liblmdb.so.0.0.0()(64bit) for package: 50:bind-libs-lite-9.11.2-51.P1.el7.xg.x86_64
+--> Processing Dependency: libcrypto.so.1.1()(64bit) for package: 50:bind-libs-lite-9.11.2-51.P1.el7.xg.x86_64
+---> Package bind-license.noarch 32:9.9.4-51.el7_4.2 will be updated
+---> Package bind-license.noarch 50:9.11.2-51.P1.el7.xg will be an update
+---> Package ca-certificates.noarch 0:2017.2.14-71.el7 will be updated
+---> Package ca-certificates.noarch 1000:2017.2.20-20.el7.xg will be an update
+--> Processing Dependency: perl(Text::Wrap) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(strict) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(MIME::Base64) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(Fcntl) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(List::Util) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(vars) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: /usr/bin/perl for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(Encode) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(Getopt::Std) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+--> Processing Dependency: perl(diagnostics) for package: 1000:ca-certificates-2017.2.20-20.el7.xg.noarch
+---> Package cpio.x86_64 0:2.11-25.el7_4 will be updated
+---> Package cpio.x86_64 0:2.12-20.el7.xg will be an update
+---> Package cracklib.x86_64 0:2.9.0-11.el7 will be updated
+---> Package cracklib.x86_64 0:2.9.6-30.el7.xg will be an update
+---> Package cracklib-dicts.x86_64 0:2.9.0-11.el7 will be updated
+---> Package cracklib-dicts.x86_64 0:2.9.6-30.el7.xg will be an update
+---> Package cryptsetup-libs.x86_64 0:1.7.4-3.el7_4.1 will be updated
+---> Package cryptsetup-libs.x86_64 0:2.0.1-10.el7.xg will be an update
+--> Processing Dependency: libargon2.so.0()(64bit) for package: cryptsetup-libs-2.0.1-10.el7.xg.x86_64
+---> Package curl.x86_64 0:7.29.0-42.el7_4.1 will be updated
+---> Package curl.x86_64 0:7.58.0-20.el7.xg will be an update
+--> Processing Dependency: libmetalink.so.3()(64bit) for package: curl-7.58.0-20.el7.xg.x86_64
+---> Package dbus-python.x86_64 0:1.1.1-9.el7 will be obsoleted
+---> Package expat.x86_64 0:2.1.0-10.el7_3 will be updated
+---> Package expat.x86_64 0:2.2.5-10.el7.xg will be an update
+---> Package file-libs.x86_64 0:5.11-33.el7 will be updated
+---> Package file-libs.x86_64 0:5.32-10.el7.xg will be an update
+---> Package findutils.x86_64 1:4.5.11-5.el7 will be updated
+---> Package findutils.x86_64 1:4.6.0-10.el7.xg will be an update
+---> Package fipscheck.x86_64 0:1.4.1-6.el7 will be updated
+---> Package fipscheck.x86_64 0:1.5.0-10.el7.xg will be an update
+---> Package fipscheck-lib.x86_64 0:1.4.1-6.el7 will be updated
+---> Package fipscheck-lib.x86_64 0:1.5.0-10.el7.xg will be an update
+---> Package gawk.x86_64 0:4.0.2-4.el7_3.1 will be updated
+---> Package gawk.x86_64 0:4.2.0-10.el7.xg will be an update
+--> Processing Dependency: libsigsegv.so.2()(64bit) for package: gawk-4.2.0-10.el7.xg.x86_64
+--> Processing Dependency: libmpfr.so.4()(64bit) for package: gawk-4.2.0-10.el7.xg.x86_64
+---> Package gdbm.x86_64 0:1.10-8.el7 will be updated
+---> Package gdbm.x86_64 0:1.14-10.el7.xg will be an update
+---> Package geoip.x86_64 3000:1.6.12-10.el7.xg will be obsoleting
+--> Processing Dependency: geoip-data for package: 3000:geoip-1.6.12-10.el7.xg.x86_64
+--> Processing Dependency: geoipupdate for package: 3000:geoip-1.6.12-10.el7.xg.x86_64
+---> Package gmp.x86_64 1:6.0.0-15.el7 will be updated
+---> Package gmp.x86_64 1:6.1.2-10.el7.xg will be an update
+---> Package gnupg2.x86_64 0:2.0.22-4.el7 will be updated
+---> Package gnupg2.x86_64 0:2.2.4-10.el7.xg will be an update
+--> Processing Dependency: libksba.so.8(KSBA_0.9)(64bit) for package: gnupg2-2.2.4-10.el7.xg.x86_64
+--> Processing Dependency: libgnutls.so.30(GNUTLS_3_4)(64bit) for package: gnupg2-2.2.4-10.el7.xg.x86_64
+--> Processing Dependency: libnpth.so.0(NPTH_1.0)(64bit) for package: gnupg2-2.2.4-10.el7.xg.x86_64
+--> Processing Dependency: libgnutls.so.30()(64bit) for package: gnupg2-2.2.4-10.el7.xg.x86_64
+--> Processing Dependency: libksba.so.8()(64bit) for package: gnupg2-2.2.4-10.el7.xg.x86_64
+--> Processing Dependency: libnpth.so.0()(64bit) for package: gnupg2-2.2.4-10.el7.xg.x86_64
+---> Package gpgme.x86_64 0:1.3.2-5.el7 will be updated
+---> Package gpgme.x86_64 0:1.10.0-10.el7.xg will be an update
+---> Package grep.x86_64 0:2.20-3.el7 will be updated
+---> Package grep.x86_64 0:3.1-10.el7.xg will be an update
+---> Package gzip.x86_64 0:1.5-9.el7 will be updated
+---> Package gzip.x86_64 0:1.9-10.el7.xg will be an update
+---> Package hardlink.x86_64 1:1.0-19.el7 will be updated
+---> Package hardlink.x86_64 1:1.3-10.el7.xg will be an update
+--> Processing Dependency: pcre2 for package: 1:hardlink-1.3-10.el7.xg.x86_64
+--> Processing Dependency: libpcre2-8.so.0()(64bit) for package: 1:hardlink-1.3-10.el7.xg.x86_64
+---> Package hwdata.x86_64 0:0.252-8.6.el7 will be updated
+---> Package hwdata.noarch 0:0.308-10.el7.xg will be an update
+---> Package krb5-libs.x86_64 0:1.15.1-8.el7 will be updated
+---> Package krb5-libs.x86_64 0:1.16-10.el7.xg will be an update
+---> Package libacl.x86_64 0:2.2.51-12.el7 will be updated
+---> Package libacl.x86_64 0:2.2.52-10.el7.xg will be an update
+---> Package libassuan.x86_64 0:2.1.0-3.el7 will be updated
+---> Package libassuan.x86_64 0:2.5.1-10.el7.xg will be an update
+---> Package libattr.x86_64 0:2.4.46-12.el7 will be updated
+---> Package libattr.x86_64 0:2.4.47-10.el7.xg will be an update
+---> Package libcap.x86_64 0:2.22-9.el7 will be updated
+---> Package libcap.x86_64 0:2.25-70.el7.xg will be an update
+---> Package libcurl.x86_64 0:7.29.0-42.el7_4.1 will be updated
+---> Package libcurl.x86_64 0:7.58.0-20.el7.xg will be an update
+--> Processing Dependency: libidn2.so.0(IDN2_0.0.0)(64bit) for package: libcurl-7.58.0-20.el7.xg.x86_64
+--> Processing Dependency: libnghttp2 for package: libcurl-7.58.0-20.el7.xg.x86_64
+--> Processing Dependency: libbrotlidec.so.1()(64bit) for package: libcurl-7.58.0-20.el7.xg.x86_64
+--> Processing Dependency: libnghttp2.so.14()(64bit) for package: libcurl-7.58.0-20.el7.xg.x86_64
+--> Processing Dependency: libidn2.so.0()(64bit) for package: libcurl-7.58.0-20.el7.xg.x86_64
+--> Processing Dependency: libpsl.so.5()(64bit) for package: libcurl-7.58.0-20.el7.xg.x86_64
+---> Package libdb.x86_64 0:5.3.21-21.el7_4 will be updated
+---> Package libdb.x86_64 0:5.3.28-10.el7.xg will be an update
+---> Package libdb-utils.x86_64 0:5.3.21-21.el7_4 will be updated
+---> Package libdb-utils.x86_64 0:5.3.28-10.el7.xg will be an update
+---> Package libestr.x86_64 0:0.1.9-2.el7 will be updated
+---> Package libestr.x86_64 0:0.1.10-10.el7.xg will be an update
+---> Package libfastjson.x86_64 0:0.99.4-2.el7 will be updated
+---> Package libfastjson.x86_64 0:0.99.8-10.el7.xg will be an update
+---> Package libffi.x86_64 0:3.0.13-18.el7 will be updated
+---> Package libffi.x86_64 0:3.1-30.el7.xg will be an update
+---> Package libgcrypt.x86_64 0:1.5.3-14.el7 will be updated
+---> Package libgcrypt.x86_64 0:1.8.2-10.el7.xg will be an update
+---> Package libgpg-error.x86_64 0:1.12-3.el7 will be updated
+---> Package libgpg-error.x86_64 0:1.27-10.el7.xg will be an update
+---> Package libgudev1.x86_64 0:219-42.0.2.el7_4.6 will be updated
+---> Package libgudev1.x86_64 0:219-42.0.2.el7_4.7 will be an update
+---> Package libmnl.x86_64 0:1.0.3-7.el7 will be updated
+---> Package libmnl.x86_64 0:1.0.4-10.el7.xg will be an update
+---> Package libnfnetlink.x86_64 0:1.0.1-4.el7 will be updated
+---> Package libnfnetlink.x86_64 0:1.0.1-80.el7.xg will be an update
+---> Package libpwquality.x86_64 0:1.2.3-4.el7 will be updated
+---> Package libpwquality.x86_64 0:1.4.0-10.el7.xg will be an update
+---> Package libssh2.x86_64 0:1.4.3-10.el7_2.1 will be updated
+---> Package libssh2.x86_64 0:1.8.1-10.el7.xg will be an update
+---> Package libtasn1.x86_64 0:4.10-1.el7 will be updated
+---> Package libtasn1.x86_64 0:4.13-10.el7.xg will be an update
+---> Package libverto.x86_64 0:0.2.5-4.el7 will be updated
+---> Package libverto.x86_64 0:0.3.0-10.el7.xg will be an update
+---> Package libxml2.x86_64 0:2.9.1-6.0.1.el7_2.3 will be updated
+---> Package libxml2.x86_64 0:2.9.7-10.el7.xg will be an update
+---> Package libxml2-python.x86_64 0:2.9.1-6.0.1.el7_2.3 will be obsoleted
+---> Package logrotate.x86_64 0:3.8.6-14.el7 will be updated
+---> Package logrotate.x86_64 0:3.13.0-10.el7.xg will be an update
+---> Package lua.x86_64 0:5.1.4-15.el7 will be updated
+---> Package lua.x86_64 0:5.3.4-10.el7.xg will be an update
+--> Processing Dependency: lua-libs = 5.3.4-10.el7.xg for package: lua-5.3.4-10.el7.xg.x86_64
+--> Processing Dependency: liblua-5.3.so()(64bit) for package: lua-5.3.4-10.el7.xg.x86_64
+---> Package m2crypto.x86_64 0:0.21.1-17.el7 will be updated
+---> Package m2crypto.x86_64 0:0.27.0-10.el7.xg will be an update
+--> Processing Dependency: python2-typing for package: m2crypto-0.27.0-10.el7.xg.x86_64
+---> Package nspr.x86_64 0:4.13.1-1.0.el7_3 will be updated
+---> Package nspr.x86_64 0:4.18.0-10.el7.xg will be an update
+---> Package nss.x86_64 0:3.28.4-15.el7_4 will be updated
+---> Package nss.x86_64 0:3.34.0-20.el7.xg will be an update
+---> Package nss-pem.x86_64 0:1.0.3-4.el7 will be updated
+---> Package nss-pem.x86_64 0:1.0.3-20.el7.xg will be an update
+---> Package nss-softokn.x86_64 0:3.28.3-8.0.1.el7_4 will be updated
+---> Package nss-softokn.x86_64 0:3.35.0-20.el7.xg will be an update
+---> Package nss-softokn-freebl.x86_64 0:3.28.3-8.0.1.el7_4 will be updated
+---> Package nss-softokn-freebl.x86_64 0:3.35.0-20.el7.xg will be an update
+---> Package nss-sysinit.x86_64 0:3.28.4-15.el7_4 will be updated
+---> Package nss-sysinit.x86_64 0:3.34.0-20.el7.xg will be an update
+---> Package nss-tools.x86_64 0:3.28.4-15.el7_4 will be updated
+---> Package nss-tools.x86_64 0:3.34.0-20.el7.xg will be an update
+---> Package nss-util.x86_64 0:3.28.4-3.el7 will be updated
+---> Package nss-util.x86_64 0:3.35.0-30.el7.xg will be an update
+---> Package openldap.x86_64 0:2.4.44-5.el7 will be updated
+---> Package openldap.x86_64 0:2.4.45-12.el7.xg will be an update
+---> Package openssl-libs.x86_64 1:1.0.2k-8.0.1.el7 will be updated
+---> Package openssl-libs.x86_64 1:1.0.2n-10.el7.xg will be an update
+---> Package p11-kit.x86_64 0:0.23.5-3.el7 will be updated
+---> Package p11-kit.x86_64 0:0.23.9-20.el7.xg will be an update
+---> Package p11-kit-trust.x86_64 0:0.23.5-3.el7 will be updated
+---> Package p11-kit-trust.x86_64 0:0.23.9-20.el7.xg will be an update
+---> Package pcre.x86_64 0:8.32-17.el7 will be updated
+---> Package pcre.x86_64 0:8.41-20.el7.xg will be an update
+---> Package pinentry.x86_64 0:0.8.1-17.el7 will be updated
+---> Package pinentry.x86_64 0:1.1.0-10.el7.xg will be an update
+--> Processing Dependency: libsecret-1.so.0()(64bit) for package: pinentry-1.1.0-10.el7.xg.x86_64
+---> Package popt.x86_64 0:1.13-16.el7 will be updated
+---> Package popt.x86_64 0:1.16-110.el7.xg will be an update
+---> Package pyOpenSSL.x86_64 0:0.13.1-3.el7 will be obsoleted
+---> Package python.x86_64 0:2.7.5-58.0.1.el7 will be updated
+---> Package python.x86_64 0:2.7.14-10.el7.xg will be an update
+--> Processing Dependency: python2-setuptools for package: python-2.7.14-10.el7.xg.x86_64
+--> Processing Dependency: python2-pip for package: python-2.7.14-10.el7.xg.x86_64
+---> Package python-chardet.noarch 0:2.2.1-1.el7_1 will be updated
+---> Package python-chardet.noarch 0:3.0.4-20.el7.xg will be an update
+---> Package python-libs.x86_64 0:2.7.5-58.0.1.el7 will be updated
+---> Package python-libs.x86_64 0:2.7.14-10.el7.xg will be an update
+---> Package python-pycurl.x86_64 0:7.19.0-19.el7 will be obsoleted
+---> Package python-urlgrabber.noarch 0:3.10-8.el7 will be updated
+---> Package python-urlgrabber.noarch 0:3.10.1-110.el7.xg will be an update
+---> Package python2-dbus.x86_64 0:1.2.4-110.el7.xg will be obsoleting
+---> Package python2-libxml2.x86_64 0:2.9.7-10.el7.xg will be obsoleting
+---> Package python2-pyOpenSSL.noarch 0:17.3.0-10.el7.xg will be obsoleting
+--> Processing Dependency: python-cryptography >= 1.3.0 for package: python2-pyOpenSSL-17.3.0-10.el7.xg.noarch
+---> Package python2-pycurl.x86_64 0:7.43.0.1-10.el7.xg will be obsoleting
+---> Package rpm.x86_64 0:4.11.3-25.el7 will be updated
+---> Package rpm.x86_64 0:4.11.3-210.el7.xg will be an update
+---> Package rpm-build-libs.x86_64 0:4.11.3-25.el7 will be updated
+---> Package rpm-build-libs.x86_64 0:4.11.3-210.el7.xg will be an update
+---> Package rpm-libs.x86_64 0:4.11.3-25.el7 will be updated
+---> Package rpm-libs.x86_64 0:4.11.3-210.el7.xg will be an update
+---> Package rpm-python.x86_64 0:4.11.3-25.el7 will be updated
+---> Package rpm-python.x86_64 0:4.11.3-210.el7.xg will be an update
+---> Package rsyslog.x86_64 0:8.24.0-12.el7 will be updated
+---> Package rsyslog.x86_64 0:8.31.0-20.el7.xg will be an update
+--> Processing Dependency: liblogging-stdlog.so.0()(64bit) for package: rsyslog-8.31.0-20.el7.xg.x86_64
+---> Package sed.x86_64 0:4.2.2-5.el7 will be updated
+---> Package sed.x86_64 0:4.4-10.el7.xg will be an update
+---> Package sqlite.x86_64 0:3.7.17-8.el7 will be obsoleted
+---> Package sqlite.x86_64 0:3.20.1-10.el7.xg will be obsoleting
+---> Package sqlite-libs.x86_64 0:3.20.1-10.el7.xg will be obsoleting
+---> Package systemd.x86_64 0:219-42.0.2.el7_4.6 will be updated
+---> Package systemd.x86_64 0:219-42.0.2.el7_4.7 will be an update
+---> Package systemd-libs.x86_64 0:219-42.0.2.el7_4.6 will be updated
+---> Package systemd-libs.x86_64 0:219-42.0.2.el7_4.7 will be an update
+---> Package tar.x86_64 2:1.26-32.el7 will be updated
+---> Package tar.x86_64 2000:1.30-20.el7.xg will be an update
+---> Package tzdata.noarch 0:2017c-1.el7 will be updated
+---> Package tzdata.noarch 0:2018c-1.el7 will be an update
+---> Package xz.x86_64 0:5.2.2-1.el7 will be updated
+---> Package xz.x86_64 0:5.2.3-10.el7.xg will be an update
+---> Package xz-libs.x86_64 0:5.2.2-1.el7 will be updated
+---> Package xz-libs.x86_64 0:5.2.3-10.el7.xg will be an update
+---> Package zlib.x86_64 0:1.2.7-17.el7 will be updated
+---> Package zlib.x86_64 0:1.2.11-10.el7.xg will be an update
+--> Running transaction check
+---> Package brotli.x86_64 0:1.0.2-10.el7.xg will be installed
+---> Package geoip-data.noarch 3000:2018.01-10.el7.xg will be installed
+---> Package geoipupdate.x86_64 0:2.5.0-10.el7.xg will be installed
+---> Package gnutls.x86_64 0:3.6.1-10.el7.xg will be installed
+--> Processing Dependency: trousers >= 0.3.11.2 for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libnettle.so.6(NETTLE_6)(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libhogweed.so.4(HOGWEED_4)(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libtspi.so.1()(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libhogweed.so.2()(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libnettle.so.4()(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libunistring.so.2()(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libhogweed.so.4()(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+--> Processing Dependency: libnettle.so.6()(64bit) for package: gnutls-3.6.1-10.el7.xg.x86_64
+---> Package json-c.x86_64 1000:0.13-50.el7.xg will be installed
+---> Package libargon2.x86_64 0:20161029-20.el7.xg will be installed
+---> Package libidn2.x86_64 0:2.0.4-10.el7.xg will be installed
+---> Package libksba.x86_64 0:1.3.5-10.el7.xg will be installed
+---> Package liblogging-stdlog.x86_64 0:1.0.6-10.el7.xg will be installed
+---> Package libmetalink.x86_64 0:0.1.3-10.el7.xg will be installed
+---> Package libnghttp2.x86_64 0:1.29.0-10.el7.xg will be installed
+---> Package libopenssl110.x86_64 0:1.1.0g-10.el7.xg will be installed
+---> Package libpsl.x86_64 0:0.19.1-10.el7.xg will be installed
+---> Package libsecret.x86_64 0:0.18.5-2.el7 will be installed
+---> Package libsigsegv.x86_64 0:2.11-10.el7.xg will be installed
+---> Package lmdb-libs.x86_64 0:0.9.21-30.el7.xg will be installed
+---> Package lua-libs.x86_64 0:5.3.4-10.el7.xg will be installed
+---> Package mpfr.x86_64 0:3.1.1-4.el7 will be installed
+---> Package npth.x86_64 0:1.5-10.el7.xg will be installed
+---> Package pcre2.x86_64 0:10.30-30.el7.xg will be installed
+---> Package perl.x86_64 4:5.16.3-292.el7 will be installed
+--> Processing Dependency: perl-libs = 4:5.16.3-292.el7 for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl-libs for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl-macros for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-292.el7.x86_64
+--> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.16.3-292.el7.x86_64
+---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+---> Package python2-cryptography.x86_64 0:2.1.3-10.el7.xg will be installed
+--> Processing Dependency: python-six >= 1.4.1 for package: python2-cryptography-2.1.3-10.el7.xg.x86_64
+--> Processing Dependency: python2-idna >= 2.1 for package: python2-cryptography-2.1.3-10.el7.xg.x86_64
+--> Processing Dependency: python2-cffi >= 1.7 for package: python2-cryptography-2.1.3-10.el7.xg.x86_64
+--> Processing Dependency: python2-asn1crypto >= 0.21 for package: python2-cryptography-2.1.3-10.el7.xg.x86_64
+--> Processing Dependency: python-enum34 for package: python2-cryptography-2.1.3-10.el7.xg.x86_64
+--> Processing Dependency: python-ipaddress for package: python2-cryptography-2.1.3-10.el7.xg.x86_64
+---> Package python2-pip.noarch 0:9.0.1-110.el7.xg will be installed
+---> Package python2-setuptools.noarch 0:38.4.0-10.el7.xg will be installed
+---> Package python2-typing.noarch 0:3.6.1-10.el7.xg will be installed
+--> Running transaction check
+---> Package libunistring.x86_64 0:0.9.8-10.el7.xg will be installed
+---> Package nettle.x86_64 0:3.4-10.el7.xg will be installed
+---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+---> Package perl-Getopt-Long.noarch 0:2.40-2.el7 will be installed
+--> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-2.el7.noarch
+--> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-2.el7.noarch
+---> Package perl-PathTools.x86_64 2:3.67-10.el7.xg will be installed
+---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+--> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+---> Package perl-Socket.x86_64 10:2.027-10.el7.xg will be installed
+---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+---> Package perl-Time-HiRes.x86_64 10:1.9753-10.el7.xg will be installed
+---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+---> Package perl-libs.x86_64 4:5.16.3-292.el7 will be installed
+---> Package perl-macros.x86_64 4:5.16.3-292.el7 will be installed
+---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+---> Package python2-asn1crypto.noarch 0:0.23.0-10.el7.xg will be installed
+---> Package python2-cffi.x86_64 0:1.11.2-10.el7.xg will be installed
+--> Processing Dependency: python-pycparser for package: python2-cffi-1.11.2-10.el7.xg.x86_64
+---> Package python2-enum34.noarch 0:1.1.6-30.el7.xg will be installed
+---> Package python2-idna.noarch 0:2.5-20.el7.xg will be installed
+---> Package python2-ipaddress.noarch 0:1.0.18-30.el7.xg will be installed
+---> Package python2-six.noarch 0:1.11.0-10.el7.xg will be installed
+---> Package trousers.x86_64 0:0.3.14-90.el7.xg will be installed
+---> Package trousers-lib.x86_64 0:0.3.14-90.el7.xg will be installed
+--> Running transaction check
+---> Package perl-Pod-Escapes.noarch 1:1.04-292.el7 will be installed
+---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+--> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+--> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+---> Package python2-pycparser.noarch 0:2.18-10.el7.xg will be installed
+--> Processing Dependency: python-ply >= 3.6 for package: python2-pycparser-2.18-10.el7.xg.noarch
+--> Running transaction check
+---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+--> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+--> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+--> Processing Dependency: groff-base for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+---> Package python2-ply.noarch 0:3.10-10.el7.xg will be installed
+--> Running transaction check
+---> Package groff-base.x86_64 0:1.22.3-90.el7.xg will be installed
+---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package               Arch   Version                  Repository          Size
+================================================================================
+Installing:
+ geoip                 x86_64 3000:1.6.12-10.el7.xg    xgforge_local_base 214 k
+     replacing  GeoIP.x86_64 1.5.0-11.el7
+ python2-dbus          x86_64 1.2.4-110.el7.xg         xgforge_local_base 213 k
+     replacing  dbus-python.x86_64 1.1.1-9.el7
+ python2-libxml2       x86_64 2.9.7-10.el7.xg          xgforge_local_base 370 k
+     replacing  libxml2-python.x86_64 2.9.1-6.0.1.el7_2.3
+ python2-pyOpenSSL     noarch 17.3.0-10.el7.xg         xgforge_local_base  87 k
+     replacing  pyOpenSSL.x86_64 0.13.1-3.el7
+ python2-pycurl        x86_64 7.43.0.1-10.el7.xg       xgforge_local_base 246 k
+     replacing  python-pycurl.x86_64 7.19.0-19.el7
+ sqlite                x86_64 3.20.1-10.el7.xg         xgforge_local_base 570 k
+     replacing  sqlite.x86_64 3.7.17-8.el7
+ sqlite-libs           x86_64 3.20.1-10.el7.xg         xgforge_local_base 1.6 M
+     replacing  sqlite.x86_64 3.7.17-8.el7
+Updating:
+ acl                   x86_64 2.2.52-10.el7.xg         xgforge_local_base  80 k
+ bind-libs-lite        x86_64 50:9.11.2-51.P1.el7.xg   xgforge_local_base 4.2 M
+ bind-license          noarch 50:9.11.2-51.P1.el7.xg   xgforge_local_base  84 k
+ ca-certificates       noarch 1000:2017.2.20-20.el7.xg xgforge_local_base 396 k
+ cpio                  x86_64 2.12-20.el7.xg           xgforge_local_base 253 k
+ cracklib              x86_64 2.9.6-30.el7.xg          xgforge_local_base  94 k
+ cracklib-dicts        x86_64 2.9.6-30.el7.xg          xgforge_local_base 3.9 M
+ cryptsetup-libs       x86_64 2.0.1-10.el7.xg          xgforge_local_base 749 k
+ curl                  x86_64 7.58.0-20.el7.xg         xgforge_local_base 317 k
+ expat                 x86_64 2.2.5-10.el7.xg          xgforge_local_base 181 k
+ file-libs             x86_64 5.32-10.el7.xg           xgforge_local_base 626 k
+ findutils             x86_64 1:4.6.0-10.el7.xg        xgforge_local_base 626 k
+ fipscheck             x86_64 1.5.0-10.el7.xg          xgforge_local_base  20 k
+ fipscheck-lib         x86_64 1.5.0-10.el7.xg          xgforge_local_base  14 k
+ gawk                  x86_64 4.2.0-10.el7.xg          xgforge_local_base 1.8 M
+ gdbm                  x86_64 1.14-10.el7.xg           xgforge_local_base 205 k
+ gmp                   x86_64 1:6.1.2-10.el7.xg        xgforge_local_base 814 k
+ gnupg2                x86_64 2.2.4-10.el7.xg          xgforge_local_base 2.6 M
+ gpgme                 x86_64 1.10.0-10.el7.xg         xgforge_local_base 551 k
+ grep                  x86_64 3.1-10.el7.xg            xgforge_local_base 264 k
+ gzip                  x86_64 1.9-10.el7.xg            xgforge_local_base 157 k
+ hardlink              x86_64 1:1.3-10.el7.xg          xgforge_local_base  20 k
+ hwdata                noarch 0.308-10.el7.xg          xgforge_local_base 1.4 M
+ krb5-libs             x86_64 1.16-10.el7.xg           xgforge_local_base 2.4 M
+ libacl                x86_64 2.2.52-10.el7.xg         xgforge_local_base  59 k
+ libassuan             x86_64 2.5.1-10.el7.xg          xgforge_local_base 173 k
+ libattr               x86_64 2.4.47-10.el7.xg         xgforge_local_base  31 k
+ libcap                x86_64 2.25-70.el7.xg           xgforge_local_base  63 k
+ libcurl               x86_64 7.58.0-20.el7.xg         xgforge_local_base 263 k
+ libdb                 x86_64 5.3.28-10.el7.xg         xgforge_local_base 2.7 M
+ libdb-utils           x86_64 5.3.28-10.el7.xg         xgforge_local_base  92 k
+ libestr               x86_64 0.1.10-10.el7.xg         xgforge_local_base  27 k
+ libfastjson           x86_64 0.99.8-10.el7.xg         xgforge_local_base  64 k
+ libffi                x86_64 3.1-30.el7.xg            xgforge_local_base  58 k
+ libgcrypt             x86_64 1.8.2-10.el7.xg          xgforge_local_base 1.3 M
+ libgpg-error          x86_64 1.27-10.el7.xg           xgforge_local_base 251 k
+ libgudev1             x86_64 219-42.0.2.el7_4.7       ol7_latest          84 k
+ libmnl                x86_64 1.0.4-10.el7.xg          xgforge_local_base  34 k
+ libnfnetlink          x86_64 1.0.1-80.el7.xg          xgforge_local_base  46 k
+ libpwquality          x86_64 1.4.0-10.el7.xg          xgforge_local_base 112 k
+ libssh2               x86_64 1.8.1-10.el7.xg          xgforge_local_base 254 k
+ libtasn1              x86_64 4.13-10.el7.xg           xgforge_local_base 123 k
+ libverto              x86_64 0.3.0-10.el7.xg          xgforge_local_base  30 k
+ libxml2               x86_64 2.9.7-10.el7.xg          xgforge_local_base 1.7 M
+ logrotate             x86_64 3.13.0-10.el7.xg         xgforge_local_base  73 k
+ lua                   x86_64 5.3.4-10.el7.xg          xgforge_local_base 352 k
+ m2crypto              x86_64 0.27.0-10.el7.xg         xgforge_local_base 556 k
+ nspr                  x86_64 4.18.0-10.el7.xg         xgforge_local_base 409 k
+ nss                   x86_64 3.34.0-20.el7.xg         xgforge_local_base 2.6 M
+ nss-pem               x86_64 1.0.3-20.el7.xg          xgforge_local_base 140 k
+ nss-softokn           x86_64 3.35.0-20.el7.xg         xgforge_local_base 825 k
+ nss-softokn-freebl    x86_64 3.35.0-20.el7.xg         xgforge_local_base 621 k
+ nss-sysinit           x86_64 3.34.0-20.el7.xg         xgforge_local_base  58 k
+ nss-tools             x86_64 3.34.0-20.el7.xg         xgforge_local_base 504 k
+ nss-util              x86_64 3.35.0-30.el7.xg         xgforge_local_base 204 k
+ openldap              x86_64 2.4.45-12.el7.xg         xgforge_local_base 938 k
+ openssl-libs          x86_64 1:1.0.2n-10.el7.xg       xgforge_local_base 3.3 M
+ p11-kit               x86_64 0.23.9-20.el7.xg         xgforge_local_base 1.3 M
+ p11-kit-trust         x86_64 0.23.9-20.el7.xg         xgforge_local_base 268 k
+ pcre                  x86_64 8.41-20.el7.xg           xgforge_local_base 1.2 M
+ pinentry              x86_64 1.1.0-10.el7.xg          xgforge_local_base 101 k
+ popt                  x86_64 1.16-110.el7.xg          xgforge_local_base  96 k
+ python                x86_64 2.7.14-10.el7.xg         xgforge_local_base  88 k
+ python-chardet        noarch 3.0.4-20.el7.xg          xgforge_local_base 183 k
+ python-libs           x86_64 2.7.14-10.el7.xg         xgforge_local_base 8.4 M
+ python-urlgrabber     noarch 3.10.1-110.el7.xg        xgforge_local_base 105 k
+ rpm                   x86_64 4.11.3-210.el7.xg        xgforge_local_base 1.2 M
+ rpm-build-libs        x86_64 4.11.3-210.el7.xg        xgforge_local_base 248 k
+ rpm-libs              x86_64 4.11.3-210.el7.xg        xgforge_local_base 888 k
+ rpm-python            x86_64 4.11.3-210.el7.xg        xgforge_local_base 154 k
+ rsyslog               x86_64 8.31.0-20.el7.xg         xgforge_local_base 1.7 M
+ sed                   x86_64 4.4-10.el7.xg            xgforge_local_base 279 k
+ systemd               x86_64 219-42.0.2.el7_4.7       ol7_latest         5.2 M
+ systemd-libs          x86_64 219-42.0.2.el7_4.7       ol7_latest         376 k
+ tar                   x86_64 2000:1.30-20.el7.xg      xgforge_local_base 824 k
+ tzdata                noarch 2018c-1.el7              ol7_latest         478 k
+ xz                    x86_64 5.2.3-10.el7.xg          xgforge_local_base 166 k
+ xz-libs               x86_64 5.2.3-10.el7.xg          xgforge_local_base 234 k
+ zlib                  x86_64 1.2.11-10.el7.xg         xgforge_local_base 144 k
+Installing for dependencies:
+ brotli                x86_64 1.0.2-10.el7.xg          xgforge_local_base 720 k
+ geoip-data            noarch 3000:2018.01-10.el7.xg   xgforge_local_base 461 k
+ geoipupdate           x86_64 2.5.0-10.el7.xg          xgforge_local_base  61 k
+ gnutls                x86_64 3.6.1-10.el7.xg          xgforge_local_base 1.1 M
+ groff-base            x86_64 1.22.3-90.el7.xg         xgforge_local_base 961 k
+ json-c                x86_64 1000:0.13-50.el7.xg      xgforge_local_base 126 k
+ libargon2             x86_64 20161029-20.el7.xg       xgforge_local_base  53 k
+ libidn2               x86_64 2.0.4-10.el7.xg          xgforge_local_base 118 k
+ libksba               x86_64 1.3.5-10.el7.xg          xgforge_local_base 294 k
+ liblogging-stdlog     x86_64 1.0.6-10.el7.xg          xgforge_local_base  29 k
+ libmetalink           x86_64 0.1.3-10.el7.xg          xgforge_local_base  61 k
+ libnghttp2            x86_64 1.29.0-10.el7.xg         xgforge_local_base  64 k
+ libopenssl110         x86_64 1.1.0g-10.el7.xg         xgforge_local_base 1.2 M
+ libpsl                x86_64 0.19.1-10.el7.xg         xgforge_local_base  69 k
+ libsecret             x86_64 0.18.5-2.el7             ol7_latest         150 k
+ libsigsegv            x86_64 2.11-10.el7.xg           xgforge_local_base  32 k
+ libunistring          x86_64 0.9.8-10.el7.xg          xgforge_local_base 921 k
+ lmdb-libs             x86_64 0.9.21-30.el7.xg         xgforge_local_base 122 k
+ lua-libs              x86_64 5.3.4-10.el7.xg          xgforge_local_base 582 k
+ mpfr                  x86_64 3.1.1-4.el7              ol7_latest         198 k
+ nettle                x86_64 3.4-10.el7.xg            xgforge_local_base 893 k
+ npth                  x86_64 1.5-10.el7.xg            xgforge_local_base  28 k
+ pcre2                 x86_64 10.30-30.el7.xg          xgforge_local_base 531 k
+ perl                  x86_64 4:5.16.3-292.el7         ol7_latest         8.0 M
+ perl-Carp             noarch 1.26-244.el7             ol7_latest          19 k
+ perl-Encode           x86_64 2.51-7.el7               ol7_latest         1.5 M
+ perl-Exporter         noarch 5.68-3.el7               ol7_latest          28 k
+ perl-File-Path        noarch 2.09-2.el7               ol7_latest          26 k
+ perl-File-Temp        noarch 0.23.01-3.el7            ol7_latest          56 k
+ perl-Filter           x86_64 1.49-3.el7               ol7_latest          76 k
+ perl-Getopt-Long      noarch 2.40-2.el7               ol7_latest          55 k
+ perl-HTTP-Tiny        noarch 0.033-3.el7              ol7_latest          38 k
+ perl-PathTools        x86_64 2:3.67-10.el7.xg         xgforge_local_base 109 k
+ perl-Pod-Escapes      noarch 1:1.04-292.el7           ol7_latest          50 k
+ perl-Pod-Perldoc      noarch 3.20-4.el7               ol7_latest          86 k
+ perl-Pod-Simple       noarch 1:3.28-4.el7             ol7_latest         216 k
+ perl-Pod-Usage        noarch 1.63-3.el7               ol7_latest          26 k
+ perl-Scalar-List-Utils
+                       x86_64 1.27-248.el7             ol7_latest          35 k
+ perl-Socket           x86_64 10:2.027-10.el7.xg       xgforge_local_base  85 k
+ perl-Storable         x86_64 2.45-3.el7               ol7_latest          76 k
+ perl-Text-ParseWords  noarch 3.29-4.el7               ol7_latest          13 k
+ perl-Time-HiRes       x86_64 10:1.9753-10.el7.xg      xgforge_local_base  85 k
+ perl-Time-Local       noarch 1.2300-2.el7             ol7_latest          24 k
+ perl-constant         noarch 1.27-2.el7               ol7_latest          18 k
+ perl-libs             x86_64 4:5.16.3-292.el7         ol7_latest         687 k
+ perl-macros           x86_64 4:5.16.3-292.el7         ol7_latest          43 k
+ perl-parent           noarch 1:0.225-244.el7          ol7_latest          12 k
+ perl-podlators        noarch 2.5.1-3.el7              ol7_latest         111 k
+ perl-threads          x86_64 1.87-4.el7               ol7_latest          48 k
+ perl-threads-shared   x86_64 1.43-6.el7               ol7_latest          38 k
+ python2-asn1crypto    noarch 0.23.0-10.el7.xg         xgforge_local_base 172 k
+ python2-cffi          x86_64 1.11.2-10.el7.xg         xgforge_local_base 343 k
+ python2-cryptography  x86_64 2.1.3-10.el7.xg          xgforge_local_base 940 k
+ python2-enum34        noarch 1.1.6-30.el7.xg          xgforge_local_base  51 k
+ python2-idna          noarch 2.5-20.el7.xg            xgforge_local_base  93 k
+ python2-ipaddress     noarch 1.0.18-30.el7.xg         xgforge_local_base  34 k
+ python2-pip           noarch 9.0.1-110.el7.xg         xgforge_local_base 1.8 M
+ python2-ply           noarch 3.10-10.el7.xg           xgforge_local_base 100 k
+ python2-pycparser     noarch 2.18-10.el7.xg           xgforge_local_base 157 k
+ python2-setuptools    noarch 38.4.0-10.el7.xg         xgforge_local_base 609 k
+ python2-six           noarch 1.11.0-10.el7.xg         xgforge_local_base  29 k
+ python2-typing        noarch 3.6.1-10.el7.xg          xgforge_local_base  44 k
+ trousers              x86_64 0.3.14-90.el7.xg         xgforge_local_base 406 k
+ trousers-lib          x86_64 0.3.14-90.el7.xg         xgforge_local_base 578 k
+
+Transaction Summary
+================================================================================
+Install   7 Packages (+64 Dependent packages)
+Upgrade  79 Packages
+
+Total download size: 92 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+Public key for acl-2.2.52-10.el7.xg.x86_64.rpm is not installed
+[91mwarning: /var/cache/yum/x86_64/7Server/xgforge_local_base/packages/acl-2.2.52-10.el7.xg.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 31033232: NOKEY
+[0m--------------------------------------------------------------------------------
+Total                                              6.6 MB/s |  92 MB  00:13     
+Retrieving key from http://rpmforge.usoncology.com/repo/xgforge/RPM-GPG-KEY-xgforge
+[91mImporting GPG key 0x31033232:
+ Userid     : "Web Administrator (US Oncology) <web.admin@usoncology.com>"
+ Fingerprint: bf12 ecc7 d844 e646 a3e2 a4ce 6224 efa3 3103 3232
+ From       : http://rpmforge.usoncology.com/repo/xgforge/RPM-GPG-KEY-xgforge
+[0mRunning transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : zlib-1.2.11-10.el7.xg.x86_64                               1/235 
+  Updating   : xz-libs-5.2.3-10.el7.xg.x86_64                             2/235 
+  Updating   : libgpg-error-1.27-10.el7.xg.x86_64                         3/235 
+  Installing : libopenssl110-1.1.0g-10.el7.xg.x86_64                      4/235 
+  Updating   : libcap-2.25-70.el7.xg.x86_64                               5/235 
+  Updating   : nspr-4.18.0-10.el7.xg.x86_64                               6/235 
+  Updating   : nss-util-3.35.0-30.el7.xg.x86_64                           7/235 
+  Updating   : libgcrypt-1.8.2-10.el7.xg.x86_64                           8/235 
+  Updating   : libdb-5.3.28-10.el7.xg.x86_64                              9/235 
+  Installing : lua-libs-5.3.4-10.el7.xg.x86_64                           10/235 
+  Updating   : popt-1.16-110.el7.xg.x86_64                               11/235 
+  Updating   : libffi-3.1-30.el7.xg.x86_64                               12/235 
+  Installing : sqlite-libs-3.20.1-10.el7.xg.x86_64                       13/235 
+  Updating   : 1:gmp-6.1.2-10.el7.xg.x86_64                              14/235 
+  Updating   : systemd-libs-219-42.0.2.el7_4.7.x86_64                    15/235 
+  Updating   : libassuan-2.5.1-10.el7.xg.x86_64                          16/235 
+  Installing : libunistring-0.9.8-10.el7.xg.x86_64                       17/235 
+  Installing : libidn2-2.0.4-10.el7.xg.x86_64                            18/235 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Updating   : p11-kit-0.23.9-20.el7.xg.x86_64                           19/235 
+  Updating   : openldap-2.4.45-12.el7.xg.x86_64                          20/235 
+  Updating   : libxml2-2.9.7-10.el7.xg.x86_64                            21/235 
+  Updating   : file-libs-5.32-10.el7.xg.x86_64                           22/235 
+  Updating   : expat-2.2.5-10.el7.xg.x86_64                              23/235 
+  Installing : 1000:json-c-0.13-50.el7.xg.x86_64                         24/235 
+  Updating   : gdbm-1.14-10.el7.xg.x86_64                                25/235 
+  Updating   : libattr-2.4.47-10.el7.xg.x86_64                           26/235 
+  Updating   : libacl-2.2.52-10.el7.xg.x86_64                            27/235 
+  Updating   : sed-4.4-10.el7.xg.x86_64                                  28/235 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Updating   : libtasn1-4.13-10.el7.xg.x86_64                            29/235 
+  Installing : groff-base-1.22.3-90.el7.xg.x86_64                        30/235 
+  Installing : 1:perl-parent-0.225-244.el7.noarch                        31/235 
+  Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                         32/235 
+  Installing : perl-podlators-2.5.1-3.el7.noarch                         33/235 
+  Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                        34/235 
+  Installing : 1:perl-Pod-Escapes-1.04-292.el7.noarch                    35/235 
+  Installing : perl-Text-ParseWords-3.29-4.el7.noarch                    36/235 
+  Installing : perl-Encode-2.51-7.el7.x86_64                             37/235 
+  Installing : perl-Pod-Usage-1.63-3.el7.noarch                          38/235 
+  Installing : 4:perl-macros-5.16.3-292.el7.x86_64                       39/235 
+  Installing : 4:perl-libs-5.16.3-292.el7.x86_64                         40/235 
+  Installing : perl-threads-1.87-4.el7.x86_64                            41/235 
+  Installing : 10:perl-Time-HiRes-1.9753-10.el7.xg.x86_64                42/235 
+  Installing : 10:perl-Socket-2.027-10.el7.xg.x86_64                     43/235 
+  Installing : perl-threads-shared-1.43-6.el7.x86_64                     44/235 
+  Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                45/235 
+  Installing : perl-Storable-2.45-3.el7.x86_64                           46/235 
+  Installing : perl-Exporter-5.68-3.el7.noarch                           47/235 
+  Installing : perl-constant-1.27-2.el7.noarch                           48/235 
+  Installing : perl-Carp-1.26-244.el7.noarch                             49/235 
+  Installing : perl-Filter-1.49-3.el7.x86_64                             50/235 
+  Installing : perl-File-Temp-0.23.01-3.el7.noarch                       51/235 
+  Installing : perl-File-Path-2.09-2.el7.noarch                          52/235 
+  Installing : 2:perl-PathTools-3.67-10.el7.xg.x86_64                    53/235 
+  Installing : perl-Time-Local-1.2300-2.el7.noarch                       54/235 
+  Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                       55/235 
+  Installing : perl-Getopt-Long-2.40-2.el7.noarch                        56/235 
+  Installing : 4:perl-5.16.3-292.el7.x86_64                              57/235 
+  Updating   : acl-2.2.52-10.el7.xg.x86_64                               58/235 
+  Updating   : logrotate-3.13.0-10.el7.xg.x86_64                         59/235 
+  Installing : libmetalink-0.1.3-10.el7.xg.x86_64                        60/235 
+  Installing : nettle-3.4-10.el7.xg.x86_64                               61/235 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : mpfr-3.1.1-4.el7.x86_64                                   62/235 
+  Updating   : libdb-utils-5.3.28-10.el7.xg.x86_64                       63/235 
+  Installing : libsecret-0.18.5-2.el7.x86_64                             64/235 
+  Updating   : pinentry-1.1.0-10.el7.xg.x86_64                           65/235 
+  Updating   : nss-softokn-freebl-3.35.0-20.el7.xg.x86_64                66/235 
+  Updating   : nss-softokn-3.35.0-20.el7.xg.x86_64                       67/235 
+  Updating   : nss-pem-1.0.3-20.el7.xg.x86_64                            68/235 
+  Updating   : nss-3.34.0-20.el7.xg.x86_64                               69/235 
+  Updating   : nss-sysinit-3.34.0-20.el7.xg.x86_64                       70/235 
+  Updating   : libssh2-1.8.1-10.el7.xg.x86_64                            71/235 
+  Installing : libksba-1.3.5-10.el7.xg.x86_64                            72/235 
+  Updating   : libfastjson-0.99.8-10.el7.xg.x86_64                       73/235 
+  Installing : libargon2-20161029-20.el7.xg.x86_64                       74/235 
+  Installing : liblogging-stdlog-1.0.6-10.el7.xg.x86_64                  75/235 
+  Installing : lmdb-libs-0.9.21-30.el7.xg.x86_64                         76/235 
+  Installing : pcre2-10.30-30.el7.xg.x86_64                              77/235 
+  Updating   : libestr-0.1.10-10.el7.xg.x86_64                           78/235 
+  Installing : libsigsegv-2.11-10.el7.xg.x86_64                          79/235 
+  Updating   : gawk-4.2.0-10.el7.xg.x86_64                               80/235 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : 3000:geoip-data-2018.01-10.el7.xg.noarch                  81/235 
+  Installing : npth-1.5-10.el7.xg.x86_64                                 82/235 
+  Updating   : pcre-8.41-20.el7.xg.x86_64                                83/235 
+  Updating   : grep-3.1-10.el7.xg.x86_64                                 84/235 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Installing : libnghttp2-1.29.0-10.el7.xg.x86_64                        85/235 
+  Updating   : 50:bind-license-9.11.2-51.P1.el7.xg.noarch                86/235 
+  Updating   : gzip-1.9-10.el7.xg.x86_64                                 87/235 
+  Updating   : cracklib-2.9.6-30.el7.xg.x86_64                           88/235 
+  Updating   : cracklib-dicts-2.9.6-30.el7.xg.x86_64                     89/235 
+  Installing : brotli-1.0.2-10.el7.xg.x86_64                             90/235 
+  Updating   : libverto-0.3.0-10.el7.xg.x86_64                           91/235 
+  Updating   : krb5-libs-1.16-10.el7.xg.x86_64                           92/235 
+  Installing : python2-pip-9.0.1-110.el7.xg.noarch                       93/235 
+  Installing : python2-setuptools-38.4.0-10.el7.xg.noarch                94/235 
+  Updating   : 1:openssl-libs-1.0.2n-10.el7.xg.x86_64                    95/235 
+  Updating   : python-libs-2.7.14-10.el7.xg.x86_64                       96/235 
+  Updating   : python-2.7.14-10.el7.xg.x86_64                            97/235 
+  Updating   : 1000:ca-certificates-2017.2.20-20.el7.xg.noarch           98/235 
+  Installing : trousers-lib-0.3.14-90.el7.xg.x86_64                      99/235 
+  Installing : python2-six-1.11.0-10.el7.xg.noarch                      100/235 
+  Installing : python2-asn1crypto-0.23.0-10.el7.xg.noarch               101/235 
+  Installing : python2-enum34-1.1.6-30.el7.xg.noarch                    102/235 
+  Installing : python2-ply-3.10-10.el7.xg.noarch                        103/235 
+  Installing : python2-pycparser-2.18-10.el7.xg.noarch                  104/235 
+  Installing : python2-cffi-1.11.2-10.el7.xg.x86_64                     105/235 
+  Installing : libpsl-0.19.1-10.el7.xg.x86_64                           106/235 
+  Updating   : libcurl-7.58.0-20.el7.xg.x86_64                          107/235 
+  Installing : geoipupdate-2.5.0-10.el7.xg.x86_64                       108/235 
+  Installing : 3000:geoip-1.6.12-10.el7.xg.x86_64                       109/235 
+  Updating   : curl-7.58.0-20.el7.xg.x86_64                             110/235 
+  Updating   : rpm-libs-4.11.3-210.el7.xg.x86_64                        111/235 
+  Updating   : rpm-4.11.3-210.el7.xg.x86_64                             112/235 
+  Installing : python2-pycurl-7.43.0.1-10.el7.xg.x86_64                 113/235 
+  Installing : python2-typing-3.6.1-10.el7.xg.noarch                    114/235 
+  Installing : python2-idna-2.5-20.el7.xg.noarch                        115/235 
+  Installing : python2-ipaddress-1.0.18-30.el7.xg.noarch                116/235 
+  Installing : python2-cryptography-2.1.3-10.el7.xg.x86_64              117/235 
+  Updating   : fipscheck-lib-1.5.0-10.el7.xg.x86_64                     118/235 
+  Updating   : fipscheck-1.5.0-10.el7.xg.x86_64                         119/235 
+  Updating   : cryptsetup-libs-2.0.1-10.el7.xg.x86_64                   120/235 
+  Updating   : systemd-219-42.0.2.el7_4.7.x86_64                        121/235 
+  Installing : trousers-0.3.14-90.el7.xg.x86_64                         122/235 
+  Installing : gnutls-3.6.1-10.el7.xg.x86_64                            123/235 
+  Updating   : gnupg2-2.2.4-10.el7.xg.x86_64                            124/235 
+install-info: /usr/share/info/dir: could not read (No such file or directory) and could not create (No such file or directory)
+  Updating   : rpm-build-libs-4.11.3-210.el7.xg.x86_64                  125/235 
+  Updating   : rpm-python-4.11.3-210.el7.xg.x86_64                      126/235 
+  Updating   : gpgme-1.10.0-10.el7.xg.x86_64                            127/235 
+  Updating   : rsyslog-8.31.0-20.el7.xg.x86_64                          128/235 
+  Installing : python2-pyOpenSSL-17.3.0-10.el7.xg.noarch                129/235 
+  Updating   : m2crypto-0.27.0-10.el7.xg.x86_64                         130/235 
+  Updating   : python-urlgrabber-3.10.1-110.el7.xg.noarch               131/235 
+  Updating   : 50:bind-libs-lite-9.11.2-51.P1.el7.xg.x86_64             132/235 
+  Installing : python2-dbus-1.2.4-110.el7.xg.x86_64                     133/235 
+  Installing : python2-libxml2-2.9.7-10.el7.xg.x86_64                   134/235 
+  Updating   : python-chardet-3.0.4-20.el7.xg.noarch                    135/235 
+  Updating   : libpwquality-1.4.0-10.el7.xg.x86_64                      136/235 
+  Updating   : xz-5.2.3-10.el7.xg.x86_64                                137/235 
+  Updating   : 1:hardlink-1.3-10.el7.xg.x86_64                          138/235 
+  Updating   : nss-tools-3.34.0-20.el7.xg.x86_64                        139/235 
+  Updating   : p11-kit-trust-0.23.9-20.el7.xg.x86_64                    140/235 
+  Updating   : 2000:tar-1.30-20.el7.xg.x86_64                           141/235 
+  Updating   : libgudev1-219-42.0.2.el7_4.7.x86_64                      142/235 
+  Installing : sqlite-3.20.1-10.el7.xg.x86_64                           143/235 
+  Updating   : lua-5.3.4-10.el7.xg.x86_64                               144/235 
+  Updating   : cpio-2.12-20.el7.xg.x86_64                               145/235 
+  Updating   : libnfnetlink-1.0.1-80.el7.xg.x86_64                      146/235 
+  Updating   : hwdata-0.308-10.el7.xg.noarch                            147/235 
+  Updating   : 1:findutils-4.6.0-10.el7.xg.x86_64                       148/235 
+  Updating   : libmnl-1.0.4-10.el7.xg.x86_64                            149/235 
+  Updating   : tzdata-2018c-1.el7.noarch                                150/235 
+  Erasing    : pyOpenSSL-0.13.1-3.el7.x86_64                            151/235 
+  Cleanup    : m2crypto-0.21.1-17.el7.x86_64                            152/235 
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/instance_home: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/install_dir/lib/python/zope/server: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/install_dir/lib/python/zope/app: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/install_dir/lib/python/zope: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/install_dir/lib/python: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/install_dir/lib: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3/install_dir: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/ZopeX3: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope27/instance_home: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope27/install_dir/lib/python/ZServer: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope27/install_dir/lib/python: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope27/install_dir/lib: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope27/install_dir: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope27: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope/lib/python/Products: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope/lib/python: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope/lib: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope/ZServer: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo/Zope: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1/demo: remove failed: No such file or directory
+warning: file /usr/share/doc/m2crypto-0.21.1: remove failed: No such file or directory
+  Cleanup    : python-urlgrabber-3.10-8.el7.noarch                      153/235 
+  Cleanup    : rpm-python-4.11.3-25.el7.x86_64                          154/235 
+  Cleanup    : rpm-build-libs-4.11.3-25.el7.x86_64                      155/235 
+  Cleanup    : 32:bind-libs-lite-9.9.4-51.el7_4.2.x86_64                156/235 
+  Erasing    : libxml2-python-2.9.1-6.0.1.el7_2.3.x86_64                157/235 
+  Cleanup    : rsyslog-8.24.0-12.el7.x86_64                             158/235 
+  Erasing    : python-pycurl-7.19.0-19.el7.x86_64                       159/235 
+warning: file /usr/share/doc/python-pycurl-7.19.0: remove failed: No such file or directory
+  Cleanup    : fipscheck-lib-1.4.1-6.el7.x86_64                         160/235 
+  Cleanup    : fipscheck-1.4.1-6.el7.x86_64                             161/235 
+  Cleanup    : gpgme-1.3.2-5.el7.x86_64                                 162/235 
+  Cleanup    : gnupg2-2.0.22-4.el7.x86_64                               163/235 
+warning: file /usr/share/doc/gnupg2-2.0.22: remove failed: No such file or directory
+  Cleanup    : logrotate-3.8.6-14.el7.x86_64                            164/235 
+  Cleanup    : libxml2-2.9.1-6.0.1.el7_2.3.x86_64                       165/235 
+  Cleanup    : libgudev1-219-42.0.2.el7_4.6.x86_64                      166/235 
+  Cleanup    : libpwquality-1.2.3-4.el7.x86_64                          167/235 
+  Cleanup    : cracklib-dicts-2.9.0-11.el7.x86_64                       168/235 
+  Cleanup    : python-chardet-2.2.1-1.el7_1.noarch                      169/235 
+  Cleanup    : hwdata-0.252-8.6.el7.x86_64                              170/235 
+  Cleanup    : systemd-219-42.0.2.el7_4.6.x86_64                        171/235 
+  Cleanup    : curl-7.29.0-42.el7_4.1.x86_64                            172/235 
+  Cleanup    : libcurl-7.29.0-42.el7_4.1.x86_64                         173/235 
+  Cleanup    : openldap-2.4.44-5.el7.x86_64                             174/235 
+  Cleanup    : rpm-libs-4.11.3-25.el7.x86_64                            175/235 
+  Cleanup    : rpm-4.11.3-25.el7.x86_64                                 176/235 
+  Cleanup    : nss-tools-3.28.4-15.el7_4.x86_64                         177/235 
+  Cleanup    : nss-pem-1.0.3-4.el7.x86_64                               178/235 
+  Cleanup    : nss-sysinit-3.28.4-15.el7_4.x86_64                       179/235 
+  Cleanup    : nss-3.28.4-15.el7_4.x86_64                               180/235 
+  Cleanup    : nss-softokn-3.28.3-8.0.1.el7_4.x86_64                    181/235 
+  Cleanup    : systemd-libs-219-42.0.2.el7_4.6.x86_64                   182/235 
+  Cleanup    : libssh2-1.4.3-10.el7_2.1.x86_64                          183/235 
+  Cleanup    : acl-2.2.51-12.el7.x86_64                                 184/235 
+  Cleanup    : cryptsetup-libs-1.7.4-3.el7_4.1.x86_64                   185/235 
+  Cleanup    : cracklib-2.9.0-11.el7.x86_64                             186/235 
+  Cleanup    : libgcrypt-1.5.3-14.el7.x86_64                            187/235 
+  Cleanup    : libcap-2.22-9.el7.x86_64                                 188/235 
+  Cleanup    : nss-util-3.28.4-3.el7.x86_64                             189/235 
+  Cleanup    : libdb-utils-5.3.21-21.el7_4.x86_64                       190/235 
+  Cleanup    : libassuan-2.1.0-3.el7.x86_64                             191/235 
+  Erasing    : GeoIP-1.5.0-11.el7.x86_64                                192/235 
+  Cleanup    : file-libs-5.11-33.el7.x86_64                             193/235 
+  Cleanup    : 2:tar-1.26-32.el7.x86_64                                 194/235 
+  Cleanup    : libacl-2.2.51-12.el7.x86_64                              195/235 
+  Erasing    : dbus-python-1.1.1-9.el7.x86_64                           196/235 
+  Cleanup    : python-2.7.5-58.0.1.el7.x86_64                           197/235 
+  Cleanup    : python-libs-2.7.5-58.0.1.el7.x86_64                      198/235 
+  Cleanup    : krb5-libs-1.15.1-8.el7.x86_64                            199/235 
+  Cleanup    : 1:openssl-libs-1.0.2k-8.0.1.el7.x86_64                   200/235 
+  Cleanup    : ca-certificates-2017.2.14-71.el7.noarch                  201/235 
+  Cleanup    : p11-kit-trust-0.23.5-3.el7.x86_64                        202/235 
+  Cleanup    : nss-softokn-freebl-3.28.3-8.0.1.el7_4.x86_64             203/235 
+  Cleanup    : p11-kit-0.23.5-3.el7.x86_64                              204/235 
+  Cleanup    : grep-2.20-3.el7.x86_64                                   205/235 
+  Cleanup    : xz-5.2.2-1.el7.x86_64                                    206/235 
+  Cleanup    : 32:bind-license-9.9.4-51.el7_4.2.noarch                  207/235 
+  Cleanup    : tzdata-2017c-1.el7.noarch                                208/235 
+  Cleanup    : xz-libs-5.2.2-1.el7.x86_64                               209/235 
+  Cleanup    : pcre-8.32-17.el7.x86_64                                  210/235 
+  Cleanup    : libffi-3.0.13-18.el7.x86_64                              211/235 
+  Cleanup    : nspr-4.13.1-1.0.el7_3.x86_64                             212/235 
+  Cleanup    : libtasn1-4.10-1.el7.x86_64                               213/235 
+  Cleanup    : zlib-1.2.7-17.el7.x86_64                                 214/235 
+  Cleanup    : gawk-4.0.2-4.el7_3.1.x86_64                              215/235 
+  Cleanup    : libverto-0.2.5-4.el7.x86_64                              216/235 
+  Cleanup    : sed-4.2.2-5.el7.x86_64                                   217/235 
+  Cleanup    : expat-2.1.0-10.el7_3.x86_64                              218/235 
+  Cleanup    : libdb-5.3.21-21.el7_4.x86_64                             219/235 
+  Cleanup    : gdbm-1.10-8.el7.x86_64                                   220/235 
+  Cleanup    : sqlite-3.7.17-8.el7.x86_64                               221/235 
+  Cleanup    : libattr-2.4.46-12.el7.x86_64                             222/235 
+  Cleanup    : libgpg-error-1.12-3.el7.x86_64                           223/235 
+  Cleanup    : gzip-1.5-9.el7.x86_64                                    224/235 
+  Cleanup    : lua-5.1.4-15.el7.x86_64                                  225/235 
+  Cleanup    : popt-1.13-16.el7.x86_64                                  226/235 
+  Cleanup    : 1:findutils-4.5.11-5.el7.x86_64                          227/235 
+  Cleanup    : pinentry-0.8.1-17.el7.x86_64                             228/235 
+  Cleanup    : libestr-0.1.9-2.el7.x86_64                               229/235 
+  Cleanup    : libfastjson-0.99.4-2.el7.x86_64                          230/235 
+  Cleanup    : cpio-2.11-25.el7_4.x86_64                                231/235 
+  Cleanup    : libnfnetlink-1.0.1-4.el7.x86_64                          232/235 
+  Cleanup    : libmnl-1.0.3-7.el7.x86_64                                233/235 
+  Cleanup    : 1:hardlink-1.0-19.el7.x86_64                             234/235 
+  Cleanup    : 1:gmp-6.0.0-15.el7.x86_64                                235/235 
+  Verifying  : libdb-5.3.28-10.el7.xg.x86_64                              1/235 
+  Verifying  : python2-six-1.11.0-10.el7.xg.noarch                        2/235 
+  Verifying  : nettle-3.4-10.el7.xg.x86_64                                3/235 
+  Verifying  : libopenssl110-1.1.0g-10.el7.xg.x86_64                      4/235 
+  Verifying  : sed-4.4-10.el7.xg.x86_64                                   5/235 
+  Verifying  : python2-pip-9.0.1-110.el7.xg.noarch                        6/235 
+  Verifying  : python-urlgrabber-3.10.1-110.el7.xg.noarch                 7/235 
+  Verifying  : 1:gmp-6.1.2-10.el7.xg.x86_64                               8/235 
+  Verifying  : libunistring-0.9.8-10.el7.xg.x86_64                        9/235 
+  Verifying  : libverto-0.3.0-10.el7.xg.x86_64                           10/235 
+  Verifying  : python2-asn1crypto-0.23.0-10.el7.xg.noarch                11/235 
+  Verifying  : rpm-build-libs-4.11.3-210.el7.xg.x86_64                   12/235 
+  Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                       13/235 
+  Verifying  : file-libs-5.32-10.el7.xg.x86_64                           14/235 
+  Verifying  : xz-5.2.3-10.el7.xg.x86_64                                 15/235 
+  Verifying  : popt-1.16-110.el7.xg.x86_64                               16/235 
+  Verifying  : brotli-1.0.2-10.el7.xg.x86_64                             17/235 
+  Verifying  : rsyslog-8.31.0-20.el7.xg.x86_64                           18/235 
+  Verifying  : 10:perl-Time-HiRes-1.9753-10.el7.xg.x86_64                19/235 
+  Verifying  : libassuan-2.5.1-10.el7.xg.x86_64                          20/235 
+  Verifying  : python2-cffi-1.11.2-10.el7.xg.x86_64                      21/235 
+  Verifying  : libdb-utils-5.3.28-10.el7.xg.x86_64                       22/235 
+  Verifying  : tzdata-2018c-1.el7.noarch                                 23/235 
+  Verifying  : groff-base-1.22.3-90.el7.xg.x86_64                        24/235 
+  Verifying  : 1:perl-Pod-Escapes-1.04-292.el7.noarch                    25/235 
+  Verifying  : 1:hardlink-1.3-10.el7.xg.x86_64                           26/235 
+  Verifying  : python2-setuptools-38.4.0-10.el7.xg.noarch                27/235 
+  Verifying  : gzip-1.9-10.el7.xg.x86_64                                 28/235 
+  Verifying  : cracklib-dicts-2.9.6-30.el7.xg.x86_64                     29/235 
+  Verifying  : python2-cryptography-2.1.3-10.el7.xg.x86_64               30/235 
+  Verifying  : gpgme-1.10.0-10.el7.xg.x86_64                             31/235 
+  Verifying  : python-2.7.14-10.el7.xg.x86_64                            32/235 
+  Verifying  : 50:bind-license-9.11.2-51.P1.el7.xg.noarch                33/235 
+  Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                    34/235 
+  Verifying  : libnghttp2-1.29.0-10.el7.xg.x86_64                        35/235 
+  Verifying  : libtasn1-4.13-10.el7.xg.x86_64                            36/235 
+  Verifying  : perl-File-Path-2.09-2.el7.noarch                          37/235 
+  Verifying  : 10:perl-Socket-2.027-10.el7.xg.x86_64                     38/235 
+  Verifying  : libpwquality-1.4.0-10.el7.xg.x86_64                       39/235 
+  Verifying  : zlib-1.2.11-10.el7.xg.x86_64                              40/235 
+  Verifying  : 4:perl-macros-5.16.3-292.el7.x86_64                       41/235 
+  Verifying  : 1000:ca-certificates-2017.2.20-20.el7.xg.noarch           42/235 
+  Verifying  : 4:perl-5.16.3-292.el7.x86_64                              43/235 
+  Verifying  : geoipupdate-2.5.0-10.el7.xg.x86_64                        44/235 
+  Verifying  : 3000:geoip-1.6.12-10.el7.xg.x86_64                        45/235 
+  Verifying  : pcre-8.41-20.el7.xg.x86_64                                46/235 
+  Verifying  : rpm-python-4.11.3-210.el7.xg.x86_64                       47/235 
+  Verifying  : npth-1.5-10.el7.xg.x86_64                                 48/235 
+  Verifying  : libmnl-1.0.4-10.el7.xg.x86_64                             49/235 
+  Verifying  : libgcrypt-1.8.2-10.el7.xg.x86_64                          50/235 
+  Verifying  : xz-libs-5.2.3-10.el7.xg.x86_64                            51/235 
+  Verifying  : libsecret-0.18.5-2.el7.x86_64                             52/235 
+  Verifying  : acl-2.2.52-10.el7.xg.x86_64                               53/235 
+  Verifying  : 3000:geoip-data-2018.01-10.el7.xg.noarch                  54/235 
+  Verifying  : python2-dbus-1.2.4-110.el7.xg.x86_64                      55/235 
+  Verifying  : sqlite-libs-3.20.1-10.el7.xg.x86_64                       56/235 
+  Verifying  : 4:perl-libs-5.16.3-292.el7.x86_64                         57/235 
+  Verifying  : nss-util-3.35.0-30.el7.xg.x86_64                          58/235 
+  Verifying  : curl-7.58.0-20.el7.xg.x86_64                              59/235 
+  Verifying  : systemd-libs-219-42.0.2.el7_4.7.x86_64                    60/235 
+  Verifying  : libsigsegv-2.11-10.el7.xg.x86_64                          61/235 
+  Verifying  : nss-softokn-3.35.0-20.el7.xg.x86_64                       62/235 
+  Verifying  : libcurl-7.58.0-20.el7.xg.x86_64                           63/235 
+  Verifying  : python-libs-2.7.14-10.el7.xg.x86_64                       64/235 
+  Verifying  : mpfr-3.1.1-4.el7.x86_64                                   65/235 
+  Verifying  : trousers-0.3.14-90.el7.xg.x86_64                          66/235 
+  Verifying  : python2-enum34-1.1.6-30.el7.xg.noarch                     67/235 
+  Verifying  : nss-pem-1.0.3-20.el7.xg.x86_64                            68/235 
+  Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                          69/235 
+  Verifying  : sqlite-3.20.1-10.el7.xg.x86_64                            70/235 
+  Verifying  : perl-threads-1.87-4.el7.x86_64                            71/235 
+  Verifying  : fipscheck-1.5.0-10.el7.xg.x86_64                          72/235 
+  Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                73/235 
+  Verifying  : m2crypto-0.27.0-10.el7.xg.x86_64                          74/235 
+  Verifying  : python2-pyOpenSSL-17.3.0-10.el7.xg.noarch                 75/235 
+  Verifying  : perl-threads-shared-1.43-6.el7.x86_64                     76/235 
+  Verifying  : perl-Storable-2.45-3.el7.x86_64                           77/235 
+  Verifying  : python2-ply-3.10-10.el7.xg.noarch                         78/235 
+  Verifying  : libestr-0.1.10-10.el7.xg.x86_64                           79/235 
+  Verifying  : gnutls-3.6.1-10.el7.xg.x86_64                             80/235 
+  Verifying  : python2-pycparser-2.18-10.el7.xg.noarch                   81/235 
+  Verifying  : 2000:tar-1.30-20.el7.xg.x86_64                            82/235 
+  Verifying  : 1:perl-parent-0.225-244.el7.noarch                        83/235 
+  Verifying  : 1:findutils-4.6.0-10.el7.xg.x86_64                        84/235 
+  Verifying  : rpm-libs-4.11.3-210.el7.xg.x86_64                         85/235 
+  Verifying  : libpsl-0.19.1-10.el7.xg.x86_64                            86/235 
+  Verifying  : p11-kit-0.23.9-20.el7.xg.x86_64                           87/235 
+  Verifying  : openldap-2.4.45-12.el7.xg.x86_64                          88/235 
+  Verifying  : libattr-2.4.47-10.el7.xg.x86_64                           89/235 
+  Verifying  : perl-Encode-2.51-7.el7.x86_64                             90/235 
+  Verifying  : systemd-219-42.0.2.el7_4.7.x86_64                         91/235 
+  Verifying  : 1:openssl-libs-1.0.2n-10.el7.xg.x86_64                    92/235 
+  Verifying  : perl-podlators-2.5.1-3.el7.noarch                         93/235 
+  Verifying  : pinentry-1.1.0-10.el7.xg.x86_64                           94/235 
+  Verifying  : p11-kit-trust-0.23.9-20.el7.xg.x86_64                     95/235 
+  Verifying  : pcre2-10.30-30.el7.xg.x86_64                              96/235 
+  Verifying  : python2-typing-3.6.1-10.el7.xg.noarch                     97/235 
+  Verifying  : python2-idna-2.5-20.el7.xg.noarch                         98/235 
+  Verifying  : lmdb-libs-0.9.21-30.el7.xg.x86_64                         99/235 
+  Verifying  : nss-softokn-freebl-3.35.0-20.el7.xg.x86_64               100/235 
+  Verifying  : python2-libxml2-2.9.7-10.el7.xg.x86_64                   101/235 
+  Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                        102/235 
+  Verifying  : cryptsetup-libs-2.0.1-10.el7.xg.x86_64                   103/235 
+  Verifying  : python2-ipaddress-1.0.18-30.el7.xg.noarch                104/235 
+  Verifying  : 50:bind-libs-lite-9.11.2-51.P1.el7.xg.x86_64             105/235 
+  Verifying  : trousers-lib-0.3.14-90.el7.xg.x86_64                     106/235 
+  Verifying  : libssh2-1.8.1-10.el7.xg.x86_64                           107/235 
+  Verifying  : krb5-libs-1.16-10.el7.xg.x86_64                          108/235 
+  Verifying  : perl-Exporter-5.68-3.el7.noarch                          109/235 
+  Verifying  : perl-constant-1.27-2.el7.noarch                          110/235 
+  Verifying  : nspr-4.18.0-10.el7.xg.x86_64                             111/235 
+  Verifying  : nss-sysinit-3.34.0-20.el7.xg.x86_64                      112/235 
+  Verifying  : perl-Carp-1.26-244.el7.noarch                            113/235 
+  Verifying  : nss-3.34.0-20.el7.xg.x86_64                              114/235 
+  Verifying  : gdbm-1.14-10.el7.xg.x86_64                               115/235 
+  Verifying  : logrotate-3.13.0-10.el7.xg.x86_64                        116/235 
+  Verifying  : nss-tools-3.34.0-20.el7.xg.x86_64                        117/235 
+  Verifying  : perl-Filter-1.49-3.el7.x86_64                            118/235 
+  Verifying  : libgudev1-219-42.0.2.el7_4.7.x86_64                      119/235 
+  Verifying  : libacl-2.2.52-10.el7.xg.x86_64                           120/235 
+  Verifying  : gnupg2-2.2.4-10.el7.xg.x86_64                            121/235 
+  Verifying  : fipscheck-lib-1.5.0-10.el7.xg.x86_64                     122/235 
+  Verifying  : liblogging-stdlog-1.0.6-10.el7.xg.x86_64                 123/235 
+  Verifying  : libidn2-2.0.4-10.el7.xg.x86_64                           124/235 
+  Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                      125/235 
+  Verifying  : 1000:json-c-0.13-50.el7.xg.x86_64                        126/235 
+  Verifying  : libgpg-error-1.27-10.el7.xg.x86_64                       127/235 
+  Verifying  : libargon2-20161029-20.el7.xg.x86_64                      128/235 
+  Verifying  : lua-libs-5.3.4-10.el7.xg.x86_64                          129/235 
+  Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                       130/235 
+  Verifying  : rpm-4.11.3-210.el7.xg.x86_64                             131/235 
+  Verifying  : hwdata-0.308-10.el7.xg.noarch                            132/235 
+  Verifying  : libksba-1.3.5-10.el7.xg.x86_64                           133/235 
+  Verifying  : python-chardet-3.0.4-20.el7.xg.noarch                    134/235 
+  Verifying  : cracklib-2.9.6-30.el7.xg.x86_64                          135/235 
+  Verifying  : libnfnetlink-1.0.1-80.el7.xg.x86_64                      136/235 
+  Verifying  : libxml2-2.9.7-10.el7.xg.x86_64                           137/235 
+  Verifying  : cpio-2.12-20.el7.xg.x86_64                               138/235 
+  Verifying  : gawk-4.2.0-10.el7.xg.x86_64                              139/235 
+  Verifying  : libfastjson-0.99.8-10.el7.xg.x86_64                      140/235 
+  Verifying  : libffi-3.1-30.el7.xg.x86_64                              141/235 
+  Verifying  : python2-pycurl-7.43.0.1-10.el7.xg.x86_64                 142/235 
+  Verifying  : grep-3.1-10.el7.xg.x86_64                                143/235 
+  Verifying  : libmetalink-0.1.3-10.el7.xg.x86_64                       144/235 
+  Verifying  : libcap-2.25-70.el7.xg.x86_64                             145/235 
+  Verifying  : expat-2.2.5-10.el7.xg.x86_64                             146/235 
+  Verifying  : 2:perl-PathTools-3.67-10.el7.xg.x86_64                   147/235 
+  Verifying  : lua-5.3.4-10.el7.xg.x86_64                               148/235 
+  Verifying  : perl-Getopt-Long-2.40-2.el7.noarch                       149/235 
+  Verifying  : perl-Time-Local-1.2300-2.el7.noarch                      150/235 
+  Verifying  : fipscheck-lib-1.4.1-6.el7.x86_64                         151/235 
+  Verifying  : gzip-1.5-9.el7.x86_64                                    152/235 
+  Verifying  : rpm-4.11.3-25.el7.x86_64                                 153/235 
+  Verifying  : pcre-8.32-17.el7.x86_64                                  154/235 
+  Verifying  : nss-util-3.28.4-3.el7.x86_64                             155/235 
+  Verifying  : libverto-0.2.5-4.el7.x86_64                              156/235 
+  Verifying  : file-libs-5.11-33.el7.x86_64                             157/235 
+  Verifying  : nss-sysinit-3.28.4-15.el7_4.x86_64                       158/235 
+  Verifying  : ca-certificates-2017.2.14-71.el7.noarch                  159/235 
+  Verifying  : fipscheck-1.4.1-6.el7.x86_64                             160/235 
+  Verifying  : python-2.7.5-58.0.1.el7.x86_64                           161/235 
+  Verifying  : libnfnetlink-1.0.1-4.el7.x86_64                          162/235 
+  Verifying  : cracklib-dicts-2.9.0-11.el7.x86_64                       163/235 
+  Verifying  : libacl-2.2.51-12.el7.x86_64                              164/235 
+  Verifying  : cryptsetup-libs-1.7.4-3.el7_4.1.x86_64                   165/235 
+  Verifying  : libffi-3.0.13-18.el7.x86_64                              166/235 
+  Verifying  : krb5-libs-1.15.1-8.el7.x86_64                            167/235 
+  Verifying  : libassuan-2.1.0-3.el7.x86_64                             168/235 
+  Verifying  : lua-5.1.4-15.el7.x86_64                                  169/235 
+  Verifying  : nspr-4.13.1-1.0.el7_3.x86_64                             170/235 
+  Verifying  : libxml2-2.9.1-6.0.1.el7_2.3.x86_64                       171/235 
+  Verifying  : libgudev1-219-42.0.2.el7_4.6.x86_64                      172/235 
+  Verifying  : dbus-python-1.1.1-9.el7.x86_64                           173/235 
+  Verifying  : 32:bind-libs-lite-9.9.4-51.el7_4.2.x86_64                174/235 
+  Verifying  : 2:tar-1.26-32.el7.x86_64                                 175/235 
+  Verifying  : libpwquality-1.2.3-4.el7.x86_64                          176/235 
+  Verifying  : m2crypto-0.21.1-17.el7.x86_64                            177/235 
+  Verifying  : 1:openssl-libs-1.0.2k-8.0.1.el7.x86_64                   178/235 
+  Verifying  : nss-softokn-freebl-3.28.3-8.0.1.el7_4.x86_64             179/235 
+  Verifying  : rpm-python-4.11.3-25.el7.x86_64                          180/235 
+  Verifying  : 32:bind-license-9.9.4-51.el7_4.2.noarch                  181/235 
+  Verifying  : 1:gmp-6.0.0-15.el7.x86_64                                182/235 
+  Verifying  : sqlite-3.7.17-8.el7.x86_64                               183/235 
+  Verifying  : libtasn1-4.10-1.el7.x86_64                               184/235 
+  Verifying  : 1:hardlink-1.0-19.el7.x86_64                             185/235 
+  Verifying  : libgpg-error-1.12-3.el7.x86_64                           186/235 
+  Verifying  : nss-softokn-3.28.3-8.0.1.el7_4.x86_64                    187/235 
+  Verifying  : gnupg2-2.0.22-4.el7.x86_64                               188/235 
+  Verifying  : libxml2-python-2.9.1-6.0.1.el7_2.3.x86_64                189/235 
+  Verifying  : systemd-libs-219-42.0.2.el7_4.6.x86_64                   190/235 
+  Verifying  : libmnl-1.0.3-7.el7.x86_64                                191/235 
+  Verifying  : popt-1.13-16.el7.x86_64                                  192/235 
+  Verifying  : nss-pem-1.0.3-4.el7.x86_64                               193/235 
+  Verifying  : p11-kit-0.23.5-3.el7.x86_64                              194/235 
+  Verifying  : libdb-utils-5.3.21-21.el7_4.x86_64                       195/235 
+  Verifying  : python-urlgrabber-3.10-8.el7.noarch                      196/235 
+  Verifying  : gawk-4.0.2-4.el7_3.1.x86_64                              197/235 
+  Verifying  : curl-7.29.0-42.el7_4.1.x86_64                            198/235 
+  Verifying  : pyOpenSSL-0.13.1-3.el7.x86_64                            199/235 
+  Verifying  : libcurl-7.29.0-42.el7_4.1.x86_64                         200/235 
+  Verifying  : gpgme-1.3.2-5.el7.x86_64                                 201/235 
+  Verifying  : grep-2.20-3.el7.x86_64                                   202/235 
+  Verifying  : acl-2.2.51-12.el7.x86_64                                 203/235 
+  Verifying  : pinentry-0.8.1-17.el7.x86_64                             204/235 
+  Verifying  : libssh2-1.4.3-10.el7_2.1.x86_64                          205/235 
+  Verifying  : gdbm-1.10-8.el7.x86_64                                   206/235 
+  Verifying  : openldap-2.4.44-5.el7.x86_64                             207/235 
+  Verifying  : libestr-0.1.9-2.el7.x86_64                               208/235 
+  Verifying  : python-pycurl-7.19.0-19.el7.x86_64                       209/235 
+  Verifying  : xz-libs-5.2.2-1.el7.x86_64                               210/235 
+  Verifying  : tzdata-2017c-1.el7.noarch                                211/235 
+  Verifying  : libfastjson-0.99.4-2.el7.x86_64                          212/235 
+  Verifying  : rpm-build-libs-4.11.3-25.el7.x86_64                      213/235 
+  Verifying  : rpm-libs-4.11.3-25.el7.x86_64                            214/235 
+  Verifying  : libdb-5.3.21-21.el7_4.x86_64                             215/235 
+  Verifying  : nss-tools-3.28.4-15.el7_4.x86_64                         216/235 
+  Verifying  : expat-2.1.0-10.el7_3.x86_64                              217/235 
+  Verifying  : rsyslog-8.24.0-12.el7.x86_64                             218/235 
+  Verifying  : systemd-219-42.0.2.el7_4.6.x86_64                        219/235 
+  Verifying  : cracklib-2.9.0-11.el7.x86_64                             220/235 
+  Verifying  : libattr-2.4.46-12.el7.x86_64                             221/235 
+  Verifying  : zlib-1.2.7-17.el7.x86_64                                 222/235 
+  Verifying  : libcap-2.22-9.el7.x86_64                                 223/235 
+  Verifying  : xz-5.2.2-1.el7.x86_64                                    224/235 
+  Verifying  : logrotate-3.8.6-14.el7.x86_64                            225/235 
+  Verifying  : p11-kit-trust-0.23.5-3.el7.x86_64                        226/235 
+  Verifying  : libgcrypt-1.5.3-14.el7.x86_64                            227/235 
+  Verifying  : sed-4.2.2-5.el7.x86_64                                   228/235 
+  Verifying  : 1:findutils-4.5.11-5.el7.x86_64                          229/235 
+  Verifying  : GeoIP-1.5.0-11.el7.x86_64                                230/235 
+  Verifying  : python-chardet-2.2.1-1.el7_1.noarch                      231/235 
+  Verifying  : nss-3.28.4-15.el7_4.x86_64                               232/235 
+  Verifying  : hwdata-0.252-8.6.el7.x86_64                              233/235 
+  Verifying  : python-libs-2.7.5-58.0.1.el7.x86_64                      234/235 
+  Verifying  : cpio-2.11-25.el7_4.x86_64                                235/235 
+
+Installed:
+  geoip.x86_64 3000:1.6.12-10.el7.xg                                            
+  python2-dbus.x86_64 0:1.2.4-110.el7.xg                                        
+  python2-libxml2.x86_64 0:2.9.7-10.el7.xg                                      
+  python2-pyOpenSSL.noarch 0:17.3.0-10.el7.xg                                   
+  python2-pycurl.x86_64 0:7.43.0.1-10.el7.xg                                    
+  sqlite.x86_64 0:3.20.1-10.el7.xg                                              
+  sqlite-libs.x86_64 0:3.20.1-10.el7.xg                                         
+
+Dependency Installed:
+  brotli.x86_64 0:1.0.2-10.el7.xg                                               
+  geoip-data.noarch 3000:2018.01-10.el7.xg                                      
+  geoipupdate.x86_64 0:2.5.0-10.el7.xg                                          
+  gnutls.x86_64 0:3.6.1-10.el7.xg                                               
+  groff-base.x86_64 0:1.22.3-90.el7.xg                                          
+  json-c.x86_64 1000:0.13-50.el7.xg                                             
+  libargon2.x86_64 0:20161029-20.el7.xg                                         
+  libidn2.x86_64 0:2.0.4-10.el7.xg                                              
+  libksba.x86_64 0:1.3.5-10.el7.xg                                              
+  liblogging-stdlog.x86_64 0:1.0.6-10.el7.xg                                    
+  libmetalink.x86_64 0:0.1.3-10.el7.xg                                          
+  libnghttp2.x86_64 0:1.29.0-10.el7.xg                                          
+  libopenssl110.x86_64 0:1.1.0g-10.el7.xg                                       
+  libpsl.x86_64 0:0.19.1-10.el7.xg                                              
+  libsecret.x86_64 0:0.18.5-2.el7                                               
+  libsigsegv.x86_64 0:2.11-10.el7.xg                                            
+  libunistring.x86_64 0:0.9.8-10.el7.xg                                         
+  lmdb-libs.x86_64 0:0.9.21-30.el7.xg                                           
+  lua-libs.x86_64 0:5.3.4-10.el7.xg                                             
+  mpfr.x86_64 0:3.1.1-4.el7                                                     
+  nettle.x86_64 0:3.4-10.el7.xg                                                 
+  npth.x86_64 0:1.5-10.el7.xg                                                   
+  pcre2.x86_64 0:10.30-30.el7.xg                                                
+  perl.x86_64 4:5.16.3-292.el7                                                  
+  perl-Carp.noarch 0:1.26-244.el7                                               
+  perl-Encode.x86_64 0:2.51-7.el7                                               
+  perl-Exporter.noarch 0:5.68-3.el7                                             
+  perl-File-Path.noarch 0:2.09-2.el7                                            
+  perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+  perl-Filter.x86_64 0:1.49-3.el7                                               
+  perl-Getopt-Long.noarch 0:2.40-2.el7                                          
+  perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+  perl-PathTools.x86_64 2:3.67-10.el7.xg                                        
+  perl-Pod-Escapes.noarch 1:1.04-292.el7                                        
+  perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+  perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+  perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+  perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+  perl-Socket.x86_64 10:2.027-10.el7.xg                                         
+  perl-Storable.x86_64 0:2.45-3.el7                                             
+  perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+  perl-Time-HiRes.x86_64 10:1.9753-10.el7.xg                                    
+  perl-Time-Local.noarch 0:1.2300-2.el7                                         
+  perl-constant.noarch 0:1.27-2.el7                                             
+  perl-libs.x86_64 4:5.16.3-292.el7                                             
+  perl-macros.x86_64 4:5.16.3-292.el7                                           
+  perl-parent.noarch 1:0.225-244.el7                                            
+  perl-podlators.noarch 0:2.5.1-3.el7                                           
+  perl-threads.x86_64 0:1.87-4.el7                                              
+  perl-threads-shared.x86_64 0:1.43-6.el7                                       
+  python2-asn1crypto.noarch 0:0.23.0-10.el7.xg                                  
+  python2-cffi.x86_64 0:1.11.2-10.el7.xg                                        
+  python2-cryptography.x86_64 0:2.1.3-10.el7.xg                                 
+  python2-enum34.noarch 0:1.1.6-30.el7.xg                                       
+  python2-idna.noarch 0:2.5-20.el7.xg                                           
+  python2-ipaddress.noarch 0:1.0.18-30.el7.xg                                   
+  python2-pip.noarch 0:9.0.1-110.el7.xg                                         
+  python2-ply.noarch 0:3.10-10.el7.xg                                           
+  python2-pycparser.noarch 0:2.18-10.el7.xg                                     
+  python2-setuptools.noarch 0:38.4.0-10.el7.xg                                  
+  python2-six.noarch 0:1.11.0-10.el7.xg                                         
+  python2-typing.noarch 0:3.6.1-10.el7.xg                                       
+  trousers.x86_64 0:0.3.14-90.el7.xg                                            
+  trousers-lib.x86_64 0:0.3.14-90.el7.xg                                        
+
+Updated:
+  acl.x86_64 0:2.2.52-10.el7.xg                                                 
+  bind-libs-lite.x86_64 50:9.11.2-51.P1.el7.xg                                  
+  bind-license.noarch 50:9.11.2-51.P1.el7.xg                                    
+  ca-certificates.noarch 1000:2017.2.20-20.el7.xg                               
+  cpio.x86_64 0:2.12-20.el7.xg                                                  
+  cracklib.x86_64 0:2.9.6-30.el7.xg                                             
+  cracklib-dicts.x86_64 0:2.9.6-30.el7.xg                                       
+  cryptsetup-libs.x86_64 0:2.0.1-10.el7.xg                                      
+  curl.x86_64 0:7.58.0-20.el7.xg                                                
+  expat.x86_64 0:2.2.5-10.el7.xg                                                
+  file-libs.x86_64 0:5.32-10.el7.xg                                             
+  findutils.x86_64 1:4.6.0-10.el7.xg                                            
+  fipscheck.x86_64 0:1.5.0-10.el7.xg                                            
+  fipscheck-lib.x86_64 0:1.5.0-10.el7.xg                                        
+  gawk.x86_64 0:4.2.0-10.el7.xg                                                 
+  gdbm.x86_64 0:1.14-10.el7.xg                                                  
+  gmp.x86_64 1:6.1.2-10.el7.xg                                                  
+  gnupg2.x86_64 0:2.2.4-10.el7.xg                                               
+  gpgme.x86_64 0:1.10.0-10.el7.xg                                               
+  grep.x86_64 0:3.1-10.el7.xg                                                   
+  gzip.x86_64 0:1.9-10.el7.xg                                                   
+  hardlink.x86_64 1:1.3-10.el7.xg                                               
+  hwdata.noarch 0:0.308-10.el7.xg                                               
+  krb5-libs.x86_64 0:1.16-10.el7.xg                                             
+  libacl.x86_64 0:2.2.52-10.el7.xg                                              
+  libassuan.x86_64 0:2.5.1-10.el7.xg                                            
+  libattr.x86_64 0:2.4.47-10.el7.xg                                             
+  libcap.x86_64 0:2.25-70.el7.xg                                                
+  libcurl.x86_64 0:7.58.0-20.el7.xg                                             
+  libdb.x86_64 0:5.3.28-10.el7.xg                                               
+  libdb-utils.x86_64 0:5.3.28-10.el7.xg                                         
+  libestr.x86_64 0:0.1.10-10.el7.xg                                             
+  libfastjson.x86_64 0:0.99.8-10.el7.xg                                         
+  libffi.x86_64 0:3.1-30.el7.xg                                                 
+  libgcrypt.x86_64 0:1.8.2-10.el7.xg                                            
+  libgpg-error.x86_64 0:1.27-10.el7.xg                                          
+  libgudev1.x86_64 0:219-42.0.2.el7_4.7                                         
+  libmnl.x86_64 0:1.0.4-10.el7.xg                                               
+  libnfnetlink.x86_64 0:1.0.1-80.el7.xg                                         
+  libpwquality.x86_64 0:1.4.0-10.el7.xg                                         
+  libssh2.x86_64 0:1.8.1-10.el7.xg                                              
+  libtasn1.x86_64 0:4.13-10.el7.xg                                              
+  libverto.x86_64 0:0.3.0-10.el7.xg                                             
+  libxml2.x86_64 0:2.9.7-10.el7.xg                                              
+  logrotate.x86_64 0:3.13.0-10.el7.xg                                           
+  lua.x86_64 0:5.3.4-10.el7.xg                                                  
+  m2crypto.x86_64 0:0.27.0-10.el7.xg                                            
+  nspr.x86_64 0:4.18.0-10.el7.xg                                                
+  nss.x86_64 0:3.34.0-20.el7.xg                                                 
+  nss-pem.x86_64 0:1.0.3-20.el7.xg                                              
+  nss-softokn.x86_64 0:3.35.0-20.el7.xg                                         
+  nss-softokn-freebl.x86_64 0:3.35.0-20.el7.xg                                  
+  nss-sysinit.x86_64 0:3.34.0-20.el7.xg                                         
+  nss-tools.x86_64 0:3.34.0-20.el7.xg                                           
+  nss-util.x86_64 0:3.35.0-30.el7.xg                                            
+  openldap.x86_64 0:2.4.45-12.el7.xg                                            
+  openssl-libs.x86_64 1:1.0.2n-10.el7.xg                                        
+  p11-kit.x86_64 0:0.23.9-20.el7.xg                                             
+  p11-kit-trust.x86_64 0:0.23.9-20.el7.xg                                       
+  pcre.x86_64 0:8.41-20.el7.xg                                                  
+  pinentry.x86_64 0:1.1.0-10.el7.xg                                             
+  popt.x86_64 0:1.16-110.el7.xg                                                 
+  python.x86_64 0:2.7.14-10.el7.xg                                              
+  python-chardet.noarch 0:3.0.4-20.el7.xg                                       
+  python-libs.x86_64 0:2.7.14-10.el7.xg                                         
+  python-urlgrabber.noarch 0:3.10.1-110.el7.xg                                  
+  rpm.x86_64 0:4.11.3-210.el7.xg                                                
+  rpm-build-libs.x86_64 0:4.11.3-210.el7.xg                                     
+  rpm-libs.x86_64 0:4.11.3-210.el7.xg                                           
+  rpm-python.x86_64 0:4.11.3-210.el7.xg                                         
+  rsyslog.x86_64 0:8.31.0-20.el7.xg                                             
+  sed.x86_64 0:4.4-10.el7.xg                                                    
+  systemd.x86_64 0:219-42.0.2.el7_4.7                                           
+  systemd-libs.x86_64 0:219-42.0.2.el7_4.7                                      
+  tar.x86_64 2000:1.30-20.el7.xg                                                
+  tzdata.noarch 0:2018c-1.el7                                                   
+  xz.x86_64 0:5.2.3-10.el7.xg                                                   
+  xz-libs.x86_64 0:5.2.3-10.el7.xg                                              
+  zlib.x86_64 0:1.2.11-10.el7.xg                                                
+
+Replaced:
+  GeoIP.x86_64 0:1.5.0-11.el7                  dbus-python.x86_64 0:1.1.1-9.el7 
+  libxml2-python.x86_64 0:2.9.1-6.0.1.el7_2.3  pyOpenSSL.x86_64 0:0.13.1-3.el7  
+  python-pycurl.x86_64 0:7.19.0-19.el7         sqlite.x86_64 0:3.7.17-8.el7     
+
+Complete!
+ ---> 7da797ec7039
+Removing intermediate container f587a745d2db
+Step 6/22 : RUN echo "----- [C2]- Installing nginx, PHP, memcached custom binaries -----"
+ ---> Running in 96402177952e
+----- [C2]- Installing nginx, PHP, memcached custom binaries -----
+ ---> 1f16883d049d
+Removing intermediate container 96402177952e
+Step 7/22 : RUN yum --enablerepo=ol7_optional_latest install -y nginx memcached
+ ---> Running in db69a7c9cf21
+Loaded plugins: ovl, ulninfo
+Resolving Dependencies
+--> Running transaction check
+---> Package memcached.x86_64 1000:1.5.4-10.el7.xg will be installed
+--> Processing Dependency: systemd-sysv for package: 1000:memcached-1.5.4-10.el7.xg.x86_64
+--> Processing Dependency: libevent-2.0.so.5()(64bit) for package: 1000:memcached-1.5.4-10.el7.xg.x86_64
+---> Package nginx.x86_64 2:1.13.8-10.el7.xg will be installed
+--> Processing Dependency: openssl for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.18)(64bit) for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Processing Dependency: libxslt.so.1(LIBXML2_1.0.11)(64bit) for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Processing Dependency: libprofiler.so.0()(64bit) for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Processing Dependency: libgd.so.3()(64bit) for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Processing Dependency: libxslt.so.1()(64bit) for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Processing Dependency: libexslt.so.0()(64bit) for package: 2:nginx-1.13.8-10.el7.xg.x86_64
+--> Running transaction check
+---> Package gd.x86_64 0:2.2.5-10.el7.xg will be installed
+--> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libpng16.so.16(PNG16_0)(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libpng15.so.15(PNG15_0)(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libtiff.so.5(LIBTIFF_4.0)(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libX11.so.6()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libXpm.so.4()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libwebp.so.6()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libtiff.so.5()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libjpeg.so.62()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libfreetype.so.6()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libpng16.so.16()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libfontconfig.so.1()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+--> Processing Dependency: libpng15.so.15()(64bit) for package: gd-2.2.5-10.el7.xg.x86_64
+---> Package gperftools-libs.x86_64 0:2.6.3-10.el7.xg will be installed
+--> Processing Dependency: libunwind.so.8()(64bit) for package: gperftools-libs-2.6.3-10.el7.xg.x86_64
+---> Package libevent.x86_64 0:2.0.21-4.el7 will be installed
+---> Package libxslt.x86_64 0:1.1.31-10.el7.xg will be installed
+---> Package openssl.x86_64 1:1.0.2n-10.el7.xg will be installed
+--> Processing Dependency: make for package: 1:openssl-1.0.2n-10.el7.xg.x86_64
+---> Package systemd-sysv.x86_64 0:219-42.0.2.el7_4.7 will be installed
+--> Running transaction check
+---> Package fontconfig.x86_64 0:2.10.95-11.el7 will be installed
+--> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.10.95-11.el7.x86_64
+--> Processing Dependency: font(:lang=en) for package: fontconfig-2.10.95-11.el7.x86_64
+---> Package freetype.x86_64 0:2.8-20.el7.xg will be installed
+---> Package libX11.x86_64 0:1.6.5-1.el7 will be installed
+--> Processing Dependency: libX11-common >= 1.6.5-1.el7 for package: libX11-1.6.5-1.el7.x86_64
+--> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.5-1.el7.x86_64
+---> Package libXpm.x86_64 0:3.5.12-1.el7 will be installed
+---> Package libjpeg-turbo.x86_64 0:1.5.3-10.el7.xg will be installed
+---> Package libpng.x86_64 2:1.6.34-10.el7.xg will be installed
+---> Package libpng15.x86_64 0:1.5.30-10.el7.xg will be installed
+---> Package libtiff.x86_64 0:4.0.9-10.el7.xg will be installed
+--> Processing Dependency: libjbig.so.2.1()(64bit) for package: libtiff-4.0.9-10.el7.xg.x86_64
+---> Package libunwind.x86_64 2:1.2-2.el7 will be installed
+---> Package libwebp.x86_64 0:0.6.1-10.el7.xg will be installed
+---> Package make.x86_64 1:4.2.1-20.el7.xg will be installed
+--> Processing Dependency: libguile-2.0.so.22(GUILE_2.0)(64bit) for package: 1:make-4.2.1-20.el7.xg.x86_64
+--> Processing Dependency: libgc.so.1()(64bit) for package: 1:make-4.2.1-20.el7.xg.x86_64
+--> Processing Dependency: libguile-2.0.so.22()(64bit) for package: 1:make-4.2.1-20.el7.xg.x86_64
+--> Running transaction check
+---> Package fontpackages-filesystem.noarch 0:1.44-8.el7 will be installed
+---> Package gc.x86_64 0:7.6.0-40.el7.xg will be installed
+--> Processing Dependency: libatomic_ops.so.1()(64bit) for package: gc-7.6.0-40.el7.xg.x86_64
+---> Package guile.x86_64 5:2.0.9-5.el7 will be installed
+--> Processing Dependency: libltdl.so.7()(64bit) for package: 5:guile-2.0.9-5.el7.x86_64
+---> Package jbigkit-libs.x86_64 0:2.1-60.el7.xg will be installed
+---> Package libX11-common.noarch 0:1.6.5-1.el7 will be installed
+---> Package libxcb.x86_64 0:1.12-1.el7 will be installed
+--> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.12-1.el7.x86_64
+---> Package stix-fonts.noarch 0:1.1.0-5.el7 will be installed
+--> Running transaction check
+---> Package libXau.x86_64 0:1.0.8-2.1.el7 will be installed
+---> Package libatomic_ops.x86_64 0:7.4.6-10.el7.xg will be installed
+---> Package libtool-ltdl.x86_64 0:2.4.6-10.el7.xg will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch   Version               Repository           Size
+================================================================================
+Installing:
+ memcached               x86_64 1000:1.5.4-10.el7.xg  xgforge_local_base  280 k
+ nginx                   x86_64 2:1.13.8-10.el7.xg    xgforge_local_base  753 k
+Installing for dependencies:
+ fontconfig              x86_64 2.10.95-11.el7        ol7_latest          229 k
+ fontpackages-filesystem noarch 1.44-8.el7            ol7_latest          9.4 k
+ freetype                x86_64 2.8-20.el7.xg         xgforge_local_base  1.1 M
+ gc                      x86_64 7.6.0-40.el7.xg       xgforge_local_base  269 k
+ gd                      x86_64 2.2.5-10.el7.xg       xgforge_local_base  385 k
+ gperftools-libs         x86_64 2.6.3-10.el7.xg       xgforge_local_base  3.4 M
+ guile                   x86_64 5:2.0.9-5.el7         ol7_optional_latest 3.8 M
+ jbigkit-libs            x86_64 2.1-60.el7.xg         xgforge_local_base   71 k
+ libX11                  x86_64 1.6.5-1.el7           ol7_latest          606 k
+ libX11-common           noarch 1.6.5-1.el7           ol7_latest          163 k
+ libXau                  x86_64 1.0.8-2.1.el7         ol7_latest           28 k
+ libXpm                  x86_64 3.5.12-1.el7          ol7_latest           55 k
+ libatomic_ops           x86_64 7.4.6-10.el7.xg       xgforge_local_base   33 k
+ libevent                x86_64 2.0.21-4.el7          ol7_latest          208 k
+ libjpeg-turbo           x86_64 1.5.3-10.el7.xg       xgforge_local_base  401 k
+ libpng                  x86_64 2:1.6.34-10.el7.xg    xgforge_local_base  289 k
+ libpng15                x86_64 1.5.30-10.el7.xg      xgforge_local_base  220 k
+ libtiff                 x86_64 4.0.9-10.el7.xg       xgforge_local_base  483 k
+ libtool-ltdl            x86_64 2.4.6-10.el7.xg       xgforge_local_base   80 k
+ libunwind               x86_64 2:1.2-2.el7           ol7_latest           56 k
+ libwebp                 x86_64 0.6.1-10.el7.xg       xgforge_local_base  2.4 M
+ libxcb                  x86_64 1.12-1.el7            ol7_latest          210 k
+ libxslt                 x86_64 1.1.31-10.el7.xg      xgforge_local_base  528 k
+ make                    x86_64 1:4.2.1-20.el7.xg     xgforge_local_base  661 k
+ openssl                 x86_64 1:1.0.2n-10.el7.xg    xgforge_local_base  510 k
+ stix-fonts              noarch 1.1.0-5.el7           ol7_latest          1.3 M
+ systemd-sysv            x86_64 219-42.0.2.el7_4.7    ol7_latest           71 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages (+27 Dependent packages)
+
+Total download size: 18 M
+Installed size: 61 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              6.9 MB/s |  18 MB  00:02     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 2:libpng-1.6.34-10.el7.xg.x86_64                            1/29 
+  Installing : freetype-2.8-20.el7.xg.x86_64                               2/29 
+  Installing : libjpeg-turbo-1.5.3-10.el7.xg.x86_64                        3/29 
+  Installing : fontpackages-filesystem-1.44-8.el7.noarch                   4/29 
+  Installing : stix-fonts-1.1.0-5.el7.noarch                               5/29 
+  Installing : fontconfig-2.10.95-11.el7.x86_64                            6/29 
+  Installing : libxslt-1.1.31-10.el7.xg.x86_64                             7/29 
+  Installing : libXau-1.0.8-2.1.el7.x86_64                                 8/29 
+  Installing : libxcb-1.12-1.el7.x86_64                                    9/29 
+  Installing : libatomic_ops-7.4.6-10.el7.xg.x86_64                       10/29 
+  Installing : gc-7.6.0-40.el7.xg.x86_64                                  11/29 
+  Installing : libX11-common-1.6.5-1.el7.noarch                           12/29 
+  Installing : libX11-1.6.5-1.el7.x86_64                                  13/29 
+  Installing : libXpm-3.5.12-1.el7.x86_64                                 14/29 
+  Installing : systemd-sysv-219-42.0.2.el7_4.7.x86_64                     15/29 
+  Installing : jbigkit-libs-2.1-60.el7.xg.x86_64                          16/29 
+  Installing : libtiff-4.0.9-10.el7.xg.x86_64                             17/29 
+  Installing : 2:libunwind-1.2-2.el7.x86_64                               18/29 
+  Installing : gperftools-libs-2.6.3-10.el7.xg.x86_64                     19/29 
+  Installing : libevent-2.0.21-4.el7.x86_64                               20/29 
+  Installing : libpng15-1.5.30-10.el7.xg.x86_64                           21/29 
+  Installing : libtool-ltdl-2.4.6-10.el7.xg.x86_64                        22/29 
+  Installing : 5:guile-2.0.9-5.el7.x86_64                                 23/29 
+  Installing : 1:make-4.2.1-20.el7.xg.x86_64                              24/29 
+  Installing : 1:openssl-1.0.2n-10.el7.xg.x86_64                          25/29 
+  Installing : libwebp-0.6.1-10.el7.xg.x86_64                             26/29 
+  Installing : gd-2.2.5-10.el7.xg.x86_64                                  27/29 
+  Installing : 2:nginx-1.13.8-10.el7.xg.x86_64                            28/29 
+warning: user nginx does not exist - using root
+warning: user nginx does not exist - using root
+warning: user nginx does not exist - using root
+  Installing : 1000:memcached-1.5.4-10.el7.xg.x86_64                      29/29 
+  Verifying  : libX11-1.6.5-1.el7.x86_64                                   1/29 
+  Verifying  : libwebp-0.6.1-10.el7.xg.x86_64                              2/29 
+  Verifying  : libtool-ltdl-2.4.6-10.el7.xg.x86_64                         3/29 
+  Verifying  : gperftools-libs-2.6.3-10.el7.xg.x86_64                      4/29 
+  Verifying  : 1000:memcached-1.5.4-10.el7.xg.x86_64                       5/29 
+  Verifying  : fontpackages-filesystem-1.44-8.el7.noarch                   6/29 
+  Verifying  : stix-fonts-1.1.0-5.el7.noarch                               7/29 
+  Verifying  : freetype-2.8-20.el7.xg.x86_64                               8/29 
+  Verifying  : gc-7.6.0-40.el7.xg.x86_64                                   9/29 
+  Verifying  : 1:openssl-1.0.2n-10.el7.xg.x86_64                          10/29 
+  Verifying  : 5:guile-2.0.9-5.el7.x86_64                                 11/29 
+  Verifying  : libXpm-3.5.12-1.el7.x86_64                                 12/29 
+  Verifying  : libxcb-1.12-1.el7.x86_64                                   13/29 
+  Verifying  : libpng15-1.5.30-10.el7.xg.x86_64                           14/29 
+  Verifying  : libevent-2.0.21-4.el7.x86_64                               15/29 
+  Verifying  : 2:nginx-1.13.8-10.el7.xg.x86_64                            16/29 
+  Verifying  : 2:libunwind-1.2-2.el7.x86_64                               17/29 
+  Verifying  : jbigkit-libs-2.1-60.el7.xg.x86_64                          18/29 
+  Verifying  : systemd-sysv-219-42.0.2.el7_4.7.x86_64                     19/29 
+  Verifying  : libX11-common-1.6.5-1.el7.noarch                           20/29 
+  Verifying  : libatomic_ops-7.4.6-10.el7.xg.x86_64                       21/29 
+  Verifying  : gd-2.2.5-10.el7.xg.x86_64                                  22/29 
+  Verifying  : libXau-1.0.8-2.1.el7.x86_64                                23/29 
+  Verifying  : fontconfig-2.10.95-11.el7.x86_64                           24/29 
+  Verifying  : libjpeg-turbo-1.5.3-10.el7.xg.x86_64                       25/29 
+  Verifying  : libxslt-1.1.31-10.el7.xg.x86_64                            26/29 
+  Verifying  : 2:libpng-1.6.34-10.el7.xg.x86_64                           27/29 
+  Verifying  : 1:make-4.2.1-20.el7.xg.x86_64                              28/29 
+  Verifying  : libtiff-4.0.9-10.el7.xg.x86_64                             29/29 
+
+Installed:
+  memcached.x86_64 1000:1.5.4-10.el7.xg     nginx.x86_64 2:1.13.8-10.el7.xg    
+
+Dependency Installed:
+  fontconfig.x86_64 0:2.10.95-11.el7                                            
+  fontpackages-filesystem.noarch 0:1.44-8.el7                                   
+  freetype.x86_64 0:2.8-20.el7.xg                                               
+  gc.x86_64 0:7.6.0-40.el7.xg                                                   
+  gd.x86_64 0:2.2.5-10.el7.xg                                                   
+  gperftools-libs.x86_64 0:2.6.3-10.el7.xg                                      
+  guile.x86_64 5:2.0.9-5.el7                                                    
+  jbigkit-libs.x86_64 0:2.1-60.el7.xg                                           
+  libX11.x86_64 0:1.6.5-1.el7                                                   
+  libX11-common.noarch 0:1.6.5-1.el7                                            
+  libXau.x86_64 0:1.0.8-2.1.el7                                                 
+  libXpm.x86_64 0:3.5.12-1.el7                                                  
+  libatomic_ops.x86_64 0:7.4.6-10.el7.xg                                        
+  libevent.x86_64 0:2.0.21-4.el7                                                
+  libjpeg-turbo.x86_64 0:1.5.3-10.el7.xg                                        
+  libpng.x86_64 2:1.6.34-10.el7.xg                                              
+  libpng15.x86_64 0:1.5.30-10.el7.xg                                            
+  libtiff.x86_64 0:4.0.9-10.el7.xg                                              
+  libtool-ltdl.x86_64 0:2.4.6-10.el7.xg                                         
+  libunwind.x86_64 2:1.2-2.el7                                                  
+  libwebp.x86_64 0:0.6.1-10.el7.xg                                              
+  libxcb.x86_64 0:1.12-1.el7                                                    
+  libxslt.x86_64 0:1.1.31-10.el7.xg                                             
+  make.x86_64 1:4.2.1-20.el7.xg                                                 
+  openssl.x86_64 1:1.0.2n-10.el7.xg                                             
+  stix-fonts.noarch 0:1.1.0-5.el7                                               
+  systemd-sysv.x86_64 0:219-42.0.2.el7_4.7                                      
+
+Complete!
+ ---> 83735c410492
+Removing intermediate container db69a7c9cf21
+Step 8/22 : RUN yum install -y php-cli php-fpm php-gd php-imap php-intl php-json php-ldap php-mbstring       php-mcrypt php-mysqlnd php-opcache php-pdo php-process php-soap php-xml       php-pecl-apcu php-pecl-memcache php-pecl-zip php-pear
+ ---> Running in 24528fb9cfb3
+Loaded plugins: ovl, ulninfo
+Resolving Dependencies
+--> Running transaction check
+---> Package php-cli.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+--> Processing Dependency: php-common(x86-64) = 7.1.14-10.httpd24.el7.xg for package: php-cli-7.1.14-10.httpd24.el7.xg.x86_64
+---> Package php-fpm.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+--> Processing Dependency: httpd >= 2.4.10 for package: php-fpm-7.1.14-10.httpd24.el7.xg.x86_64
+---> Package php-gd.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-imap.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+--> Processing Dependency: libc-client.so.2007()(64bit) for package: php-imap-7.1.14-10.httpd24.el7.xg.x86_64
+---> Package php-intl.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+--> Processing Dependency: libicuio.so.60()(64bit) for package: php-intl-7.1.14-10.httpd24.el7.xg.x86_64
+--> Processing Dependency: libicuuc.so.60()(64bit) for package: php-intl-7.1.14-10.httpd24.el7.xg.x86_64
+--> Processing Dependency: libicudata.so.60()(64bit) for package: php-intl-7.1.14-10.httpd24.el7.xg.x86_64
+--> Processing Dependency: libicui18n.so.60()(64bit) for package: php-intl-7.1.14-10.httpd24.el7.xg.x86_64
+---> Package php-json.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-ldap.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-mbstring.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-mcrypt.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+--> Processing Dependency: libmcrypt.so.4()(64bit) for package: php-mcrypt-7.1.14-10.httpd24.el7.xg.x86_64
+---> Package php-mysqlnd.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-opcache.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-pdo.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-pear.noarch 1000:1.10.5-50.el7.xg will be installed
+--> Processing Dependency: php-composer(fedora/autoloader) for package: 1000:php-pear-1.10.5-50.el7.xg.noarch
+---> Package php-pecl-apcu.x86_64 0:5.1.9-10.httpd24_php71.el7.xg will be installed
+--> Processing Dependency: php-pecl-apcu-bc(x86-64) for package: php-pecl-apcu-5.1.9-10.httpd24_php71.el7.xg.x86_64
+---> Package php-pecl-memcache.x86_64 0:3.0.9-30_php7.1.10.el7.xg will be installed
+---> Package php-pecl-zip.x86_64 0:1.15.2-10.httpd24_php71.el7.xg will be installed
+--> Processing Dependency: libzip(x86-64) >= 1.3.2 for package: php-pecl-zip-1.15.2-10.httpd24_php71.el7.xg.x86_64
+--> Processing Dependency: libzip.so.5()(64bit) for package: php-pecl-zip-1.15.2-10.httpd24_php71.el7.xg.x86_64
+---> Package php-process.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-soap.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-xml.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+--> Running transaction check
+---> Package httpd.x86_64 0:2.4.29-21.el7.xg will be installed
+--> Processing Dependency: httpd-tools = 2.4.29-21.el7.xg for package: httpd-2.4.29-21.el7.xg.x86_64
+--> Processing Dependency: mod_http2 for package: httpd-2.4.29-21.el7.xg.x86_64
+--> Processing Dependency: /etc/mime.types for package: httpd-2.4.29-21.el7.xg.x86_64
+--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.29-21.el7.xg.x86_64
+--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.29-21.el7.xg.x86_64
+---> Package libc-client.x86_64 0:2010-11.el7.xg will be installed
+---> Package libicu.x86_64 0:60.2-10.el7.xg will be installed
+---> Package libmcrypt.x86_64 0:2.5.8-180.el7.xg will be installed
+---> Package libzip.x86_64 0:1.4.0-30.el7.xg will be installed
+---> Package php-common.x86_64 0:7.1.14-10.httpd24.el7.xg will be installed
+---> Package php-fedora-autoloader.noarch 0:1.0.0-10.el7.xg will be installed
+---> Package php-pecl-apcu-bc.x86_64 0:1.0.3-50.httpd2.4.25_php7.1.2.el7.xg will be installed
+--> Running transaction check
+---> Package apr.x86_64 0:1.6.3-10.el7.xg will be installed
+---> Package apr-util.x86_64 0:1.6.1-10.el7.xg will be installed
+--> Processing Dependency: apr-util-bdb(x86-64) = 1.6.1-10.el7.xg for package: apr-util-1.6.1-10.el7.xg.x86_64
+---> Package httpd-tools.x86_64 0:2.4.29-21.el7.xg will be installed
+---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+---> Package mod_http2.x86_64 0:1.10.13-10.el7.xg will be installed
+--> Running transaction check
+---> Package apr-util-bdb.x86_64 0:1.6.1-10.el7.xg will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch   Version                         Repository          Size
+================================================================================
+Installing:
+ php-cli        x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base  15 M
+ php-fpm        x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 5.1 M
+ php-gd         x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 160 k
+ php-imap       x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 181 k
+ php-intl       x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 1.5 M
+ php-json       x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 162 k
+ php-ldap       x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 131 k
+ php-mbstring   x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 1.7 M
+ php-mcrypt     x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 124 k
+ php-mysqlnd    x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 1.3 M
+ php-opcache    x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 910 k
+ php-pdo        x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 416 k
+ php-pear       noarch 1000:1.10.5-50.el7.xg           xgforge_local_base 354 k
+ php-pecl-apcu  x86_64 5.1.9-10.httpd24_php71.el7.xg   xgforge_local_base 292 k
+ php-pecl-memcache
+                x86_64 3.0.9-30_php7.1.10.el7.xg       xgforge_local_base 325 k
+ php-pecl-zip   x86_64 1.15.2-10.httpd24_php71.el7.xg  xgforge_local_base 149 k
+ php-process    x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 192 k
+ php-soap       x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 823 k
+ php-xml        x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 1.0 M
+Installing for dependencies:
+ apr            x86_64 1.6.3-10.el7.xg                 xgforge_local_base 324 k
+ apr-util       x86_64 1.6.1-10.el7.xg                 xgforge_local_base 247 k
+ apr-util-bdb   x86_64 1.6.1-10.el7.xg                 xgforge_local_base  35 k
+ httpd          x86_64 2.4.29-21.el7.xg                xgforge_local_base 3.1 M
+ httpd-tools    x86_64 2.4.29-21.el7.xg                xgforge_local_base 134 k
+ libc-client    x86_64 2010-11.el7.xg                  xgforge_local_base 557 k
+ libicu         x86_64 60.2-10.el7.xg                  xgforge_local_base  47 M
+ libmcrypt      x86_64 2.5.8-180.el7.xg                xgforge_local_base 204 k
+ libzip         x86_64 1.4.0-30.el7.xg                 xgforge_local_base 179 k
+ mailcap        noarch 2.1.41-2.el7                    ol7_latest          30 k
+ mod_http2      x86_64 1.10.13-10.el7.xg               xgforge_local_base 421 k
+ php-common     x86_64 7.1.14-10.httpd24.el7.xg        xgforge_local_base 2.4 M
+ php-fedora-autoloader
+                noarch 1.0.0-10.el7.xg                 xgforge_local_base 8.9 k
+ php-pecl-apcu-bc
+                x86_64 1.0.3-50.httpd2.4.25_php7.1.2.el7.xg
+                                                       xgforge_local_base  34 k
+
+Transaction Summary
+================================================================================
+Install  19 Packages (+14 Dependent packages)
+
+Total download size: 84 M
+Installed size: 325 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              9.9 MB/s |  84 MB  00:08     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : apr-1.6.3-10.el7.xg.x86_64                                  1/33 
+  Installing : apr-util-bdb-1.6.1-10.el7.xg.x86_64                         2/33 
+  Installing : apr-util-1.6.1-10.el7.xg.x86_64                             3/33 
+  Installing : httpd-tools-2.4.29-21.el7.xg.x86_64                         4/33 
+INFO: Custom php RPMs for Redhat builds...
+  Installing : php-common-7.1.14-10.httpd24.el7.xg.x86_64                  5/33 
+  Installing : php-json-7.1.14-10.httpd24.el7.xg.x86_64                    6/33 
+  Installing : php-pecl-apcu-bc-1.0.3-50.httpd2.4.25_php7.1.2.el7.xg.x8    7/33 
+  Installing : php-pecl-apcu-5.1.9-10.httpd24_php71.el7.xg.x86_64          8/33 
+  Installing : php-process-7.1.14-10.httpd24.el7.xg.x86_64                 9/33 
+  Installing : php-pdo-7.1.14-10.httpd24.el7.xg.x86_64                    10/33 
+  Installing : php-fedora-autoloader-1.0.0-10.el7.xg.noarch               11/33 
+  Installing : php-cli-7.1.14-10.httpd24.el7.xg.x86_64                    12/33 
+  Installing : php-xml-7.1.14-10.httpd24.el7.xg.x86_64                    13/33 
+  Installing : libmcrypt-2.5.8-180.el7.xg.x86_64                          14/33 
+  Installing : libzip-1.4.0-30.el7.xg.x86_64                              15/33 
+  Installing : libicu-60.2-10.el7.xg.x86_64                               16/33 
+  Installing : mailcap-2.1.41-2.el7.noarch                                17/33 
+  Installing : mod_http2-1.10.13-10.el7.xg.x86_64                         18/33 
+  Installing : httpd-2.4.29-21.el7.xg.x86_64                              19/33 
+  Installing : libc-client-2010-11.el7.xg.x86_64                          20/33 
+  Installing : php-imap-7.1.14-10.httpd24.el7.xg.x86_64                   21/33 
+  Installing : php-fpm-7.1.14-10.httpd24.el7.xg.x86_64                    22/33 
+  Installing : php-intl-7.1.14-10.httpd24.el7.xg.x86_64                   23/33 
+  Installing : php-pecl-zip-1.15.2-10.httpd24_php71.el7.xg.x86_64         24/33 
+  Installing : php-mcrypt-7.1.14-10.httpd24.el7.xg.x86_64                 25/33 
+  Installing : 1000:php-pear-1.10.5-50.el7.xg.noarch                      26/33 
+  Installing : php-mysqlnd-7.1.14-10.httpd24.el7.xg.x86_64                27/33 
+  Installing : php-gd-7.1.14-10.httpd24.el7.xg.x86_64                     28/33 
+  Installing : php-opcache-7.1.14-10.httpd24.el7.xg.x86_64                29/33 
+  Installing : php-pecl-memcache-3.0.9-30_php7.1.10.el7.xg.x86_64         30/33 
+  Installing : php-ldap-7.1.14-10.httpd24.el7.xg.x86_64                   31/33 
+  Installing : php-soap-7.1.14-10.httpd24.el7.xg.x86_64                   32/33 
+  Installing : php-mbstring-7.1.14-10.httpd24.el7.xg.x86_64               33/33 
+  Verifying  : libc-client-2010-11.el7.xg.x86_64                           1/33 
+  Verifying  : php-mcrypt-7.1.14-10.httpd24.el7.xg.x86_64                  2/33 
+  Verifying  : php-fpm-7.1.14-10.httpd24.el7.xg.x86_64                     3/33 
+  Verifying  : php-gd-7.1.14-10.httpd24.el7.xg.x86_64                      4/33 
+  Verifying  : php-opcache-7.1.14-10.httpd24.el7.xg.x86_64                 5/33 
+  Verifying  : php-pecl-apcu-5.1.9-10.httpd24_php71.el7.xg.x86_64          6/33 
+  Verifying  : mailcap-2.1.41-2.el7.noarch                                 7/33 
+  Verifying  : 1000:php-pear-1.10.5-50.el7.xg.noarch                       8/33 
+  Verifying  : apr-1.6.3-10.el7.xg.x86_64                                  9/33 
+  Verifying  : php-pecl-memcache-3.0.9-30_php7.1.10.el7.xg.x86_64         10/33 
+  Verifying  : mod_http2-1.10.13-10.el7.xg.x86_64                         11/33 
+  Verifying  : libicu-60.2-10.el7.xg.x86_64                               12/33 
+  Verifying  : php-mysqlnd-7.1.14-10.httpd24.el7.xg.x86_64                13/33 
+  Verifying  : php-pecl-apcu-bc-1.0.3-50.httpd2.4.25_php7.1.2.el7.xg.x8   14/33 
+  Verifying  : libzip-1.4.0-30.el7.xg.x86_64                              15/33 
+  Verifying  : php-ldap-7.1.14-10.httpd24.el7.xg.x86_64                   16/33 
+  Verifying  : php-soap-7.1.14-10.httpd24.el7.xg.x86_64                   17/33 
+  Verifying  : libmcrypt-2.5.8-180.el7.xg.x86_64                          18/33 
+  Verifying  : httpd-tools-2.4.29-21.el7.xg.x86_64                        19/33 
+  Verifying  : php-process-7.1.14-10.httpd24.el7.xg.x86_64                20/33 
+  Verifying  : php-mbstring-7.1.14-10.httpd24.el7.xg.x86_64               21/33 
+  Verifying  : php-pdo-7.1.14-10.httpd24.el7.xg.x86_64                    22/33 
+  Verifying  : apr-util-1.6.1-10.el7.xg.x86_64                            23/33 
+  Verifying  : php-json-7.1.14-10.httpd24.el7.xg.x86_64                   24/33 
+  Verifying  : httpd-2.4.29-21.el7.xg.x86_64                              25/33 
+  Verifying  : php-fedora-autoloader-1.0.0-10.el7.xg.noarch               26/33 
+  Verifying  : php-cli-7.1.14-10.httpd24.el7.xg.x86_64                    27/33 
+  Verifying  : php-intl-7.1.14-10.httpd24.el7.xg.x86_64                   28/33 
+  Verifying  : php-pecl-zip-1.15.2-10.httpd24_php71.el7.xg.x86_64         29/33 
+  Verifying  : apr-util-bdb-1.6.1-10.el7.xg.x86_64                        30/33 
+  Verifying  : php-common-7.1.14-10.httpd24.el7.xg.x86_64                 31/33 
+  Verifying  : php-xml-7.1.14-10.httpd24.el7.xg.x86_64                    32/33 
+  Verifying  : php-imap-7.1.14-10.httpd24.el7.xg.x86_64                   33/33 
+
+Installed:
+  php-cli.x86_64 0:7.1.14-10.httpd24.el7.xg                                     
+  php-fpm.x86_64 0:7.1.14-10.httpd24.el7.xg                                     
+  php-gd.x86_64 0:7.1.14-10.httpd24.el7.xg                                      
+  php-imap.x86_64 0:7.1.14-10.httpd24.el7.xg                                    
+  php-intl.x86_64 0:7.1.14-10.httpd24.el7.xg                                    
+  php-json.x86_64 0:7.1.14-10.httpd24.el7.xg                                    
+  php-ldap.x86_64 0:7.1.14-10.httpd24.el7.xg                                    
+  php-mbstring.x86_64 0:7.1.14-10.httpd24.el7.xg                                
+  php-mcrypt.x86_64 0:7.1.14-10.httpd24.el7.xg                                  
+  php-mysqlnd.x86_64 0:7.1.14-10.httpd24.el7.xg                                 
+  php-opcache.x86_64 0:7.1.14-10.httpd24.el7.xg                                 
+  php-pdo.x86_64 0:7.1.14-10.httpd24.el7.xg                                     
+  php-pear.noarch 1000:1.10.5-50.el7.xg                                         
+  php-pecl-apcu.x86_64 0:5.1.9-10.httpd24_php71.el7.xg                          
+  php-pecl-memcache.x86_64 0:3.0.9-30_php7.1.10.el7.xg                          
+  php-pecl-zip.x86_64 0:1.15.2-10.httpd24_php71.el7.xg                          
+  php-process.x86_64 0:7.1.14-10.httpd24.el7.xg                                 
+  php-soap.x86_64 0:7.1.14-10.httpd24.el7.xg                                    
+  php-xml.x86_64 0:7.1.14-10.httpd24.el7.xg                                     
+
+Dependency Installed:
+  apr.x86_64 0:1.6.3-10.el7.xg                                                  
+  apr-util.x86_64 0:1.6.1-10.el7.xg                                             
+  apr-util-bdb.x86_64 0:1.6.1-10.el7.xg                                         
+  httpd.x86_64 0:2.4.29-21.el7.xg                                               
+  httpd-tools.x86_64 0:2.4.29-21.el7.xg                                         
+  libc-client.x86_64 0:2010-11.el7.xg                                           
+  libicu.x86_64 0:60.2-10.el7.xg                                                
+  libmcrypt.x86_64 0:2.5.8-180.el7.xg                                           
+  libzip.x86_64 0:1.4.0-30.el7.xg                                               
+  mailcap.noarch 0:2.1.41-2.el7                                                 
+  mod_http2.x86_64 0:1.10.13-10.el7.xg                                          
+  php-common.x86_64 0:7.1.14-10.httpd24.el7.xg                                  
+  php-fedora-autoloader.noarch 0:1.0.0-10.el7.xg                                
+  php-pecl-apcu-bc.x86_64 0:1.0.3-50.httpd2.4.25_php7.1.2.el7.xg                
+
+Complete!
+ ---> 76a3bda7cf24
+Removing intermediate container 24528fb9cfb3
+Step 9/22 : RUN echo "----- [C3]- Verifying stack versions and archiving defaults -----"
+ ---> Running in 3243afdc1e33
+----- [C3]- Verifying stack versions and archiving defaults -----
+ ---> 3b2a3c8b3d29
+Removing intermediate container 3243afdc1e33
+Step 10/22 : RUN nginx -v && php -v && memcached --version &&     mkdir -p /etc/nginx/conf.d/archive /opt/{webapps/public,scripts} &&     mv /etc/nginx/conf.d/*.conf /etc/nginx/conf.d/archive/
+ ---> Running in d15a82fd8e6d
+[91mnginx version: nginx/1.13.8
+[0mPHP 7.1.14 (cli) (built: Jan 31 2018 19:26:43) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.1.14, Copyright (c) 1999-2018, by Zend Technologies
+memcached 1.5.4
+ ---> 9d720b35f27c
+Removing intermediate container d15a82fd8e6d
+Step 11/22 : RUN echo "----- [C4]- Copying configuration files to container -----"
+ ---> Running in babd4f435b6b
+----- [C4]- Copying configuration files to container -----
+ ---> 83ce77f507df
+Removing intermediate container babd4f435b6b
+Step 12/22 : COPY .docker/nginx.conf /etc/nginx/
+ ---> 322300668ba9
+Step 13/22 : COPY .docker/webapps.conf /etc/nginx/conf.d/
+ ---> 5d081d5fe106
+Step 14/22 : COPY .docker/php-fpm.conf /etc/
+ ---> 78924ac6efd3
+Step 15/22 : COPY .docker/www.conf /etc/php-fpm.d/
+ ---> 088258a5dc71
+Step 16/22 : COPY .docker/php.ini /etc/
+ ---> a1c86d924582
+Step 17/22 : COPY .docker/init.sh /opt/scripts/
+ ---> 862067a8f1f8
+Step 18/22 : COPY opt/webapps/public/ /opt/webapps/public/
+ ---> 54a8b7c1e1bb
+Step 19/22 : RUN echo "----- [C5]- Adjusting File permissions and package cleanups -----"
+ ---> Running in da199df86bc9
+----- [C5]- Adjusting File permissions and package cleanups -----
+ ---> 4800d2a62619
+Removing intermediate container da199df86bc9
+Step 20/22 : RUN useradd -M -u 1000 -d /opt/webapps -s /bin/false -g nginx nginx &&     groupadd -g 2000 apps && useradd -u 2000 -d /home/webadm -s /bin/nologin -g apps webadm &&     mkdir -p /var/run/nginx && chown -R webadm:apps /opt/webapps &&     chown -R nginx:nginx /var/lib/{nginx,php} /var/log/{nginx,php-fpm} /var/run/{nginx,php-fpm} &&     mkdir -p /var/cache/weblogs && pushd /var/cache/weblogs &&     ln -sf /var/log/nginx && ln -sf /var/log/php-fpm && popd &&     yum clean all && rm -rf /var/cache/yum/x86_64/
+ ---> Running in 71a8dff5175d
+/var/cache/weblogs /
+/
+Loaded plugins: ovl, ulninfo
+Cleaning repos: ol7_UEKR4 ol7_latest xgforge_local_base xgforge_local_extras
+Cleaning up everything
+Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
+ ---> 69a3656ebc8f
+Removing intermediate container 71a8dff5175d
+Step 21/22 : RUN echo "----- [C6]- Executing init script to start stack with container bootup -----"
+ ---> Running in c1b658f6936e
+----- [C6]- Executing init script to start stack with container bootup -----
+ ---> 7eb3a6ba813b
+Removing intermediate container c1b658f6936e
+Step 22/22 : CMD /opt/scripts/init.sh
+ ---> Running in 9e5773eb1930
+ ---> d5090fdae2e3
+Removing intermediate container 9e5773eb1930
+Successfully built d5090fdae2e3
+Successfully tagged msh_nginx-phpfpm:latest
