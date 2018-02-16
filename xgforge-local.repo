@@ -1,0 +1,21 @@
+# Name: XGforge RPM Repository for Red Hat Enterprise 7 - xg
+# URL: http://rpmforge.usoncology.com/
+
+[xgforge_local_base]
+name = RHEL $releasever - rpmforge.usoncology.com - XGForge base
+baseurl = http://rpmforge.usoncology.com/repo/xgforge/el7/base/$basearch
+enabled = 1
+protect = 1
+gpgkey = http://rpmforge.usoncology.com/repo/xgforge/RPM-GPG-KEY-xgforge 
+gpgcheck = 1
+exclude =
+
+[xgforge_local_extras]
+name = RHEL $releasever - rpmforge.usoncology.com - XGForge extras
+baseurl = http://rpmforge.usoncology.com/repo/xgforge/el7/extras/$basearch
+enabled = 1
+protect = 1
+gpgkey = http://rpmforge.usoncology.com/repo/xgforge/RPM-GPG-KEY-xgforge 
+gpgcheck = 1
+exclude =
+

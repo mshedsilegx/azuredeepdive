@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx-phpfpm:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    stdin_open: true
+    tty: true
